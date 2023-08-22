@@ -7,8 +7,8 @@ function atualizarRelogio() {
   
     const dataFormatada = `${dia}/${mes}/${ano}`;
   
-    const horas = agora.getHours();
-    const minutos = agora.getMinutes();
+    const horas = String(agora.getHours()).padStart(2, '0');
+    const minutos = String(agora.getMinutes()).padStart(2, '0');
   
     const relogioElement = document.getElementById('relogio');
     relogioElement.innerHTML = `
