@@ -9,6 +9,23 @@
   -ms-touch-action: auto;
 }
 
+/* texto logo */
+
+.brand-logo{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-left: 20px;
+}
+
+.mt-3{
+  text-align: center;
+}
+
+.mb-2{
+  text-align: center;
+}
+
 /*
  * Scrollbar rail styles
  */

@@ -2409,6 +2409,10 @@ progress {
   flex: 0 0 auto;
   width: 100%; }
 
+.file-input {
+  height: 80px;
+}
+
 .offset-1 {
   margin-left: 8.33333%; }
 
