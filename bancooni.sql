@@ -1,6 +1,3 @@
-use bancooni;
-
-
 CREATE TABLE usuario(
   idUS INT NOT NULL AUTO_INCREMENT,
   token VARCHAR(45) NOT NULL,
@@ -9,11 +6,6 @@ CREATE TABLE usuario(
   email VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY ( idUS ))
 ;
-/*cria tabela: usuario 
-  chave primaria: id de usuario 
-*/
-  
-
 CREATE TABLE cliente (
   usr_idUS INT NOT NULL,
   idCL INT NOT NULL AUTO_INCREMENT,
@@ -32,10 +24,7 @@ CREATE TABLE cliente (
   PRIMARY KEY (idCL, cpf, usr_idUS),
   CONSTRAINT fk_cliente_usuario FOREIGN KEY (usr_idUS) REFERENCES usuario (idUS)
   );
-  /*cria tabela: cliente 
-  chave primaria: id de usuario, id de cliente e cpf de cliente   
-  chave estrangeira: id de usuario 
-  */
+  
   
   CREATE TABLE IF NOT EXISTS cartao (
   idCA INT NOT NULL AUTO_INCREMENT,
@@ -46,10 +35,6 @@ CREATE TABLE cliente (
   PRIMARY KEY (idCA, crt_idCL),
   CONSTRAINT fk_cartao_cliente FOREIGN KEY (crt_idCL) REFERENCES cliente (idCL)
   );
-  /*cria tabela: cartao 
-  chave primaria: id de cartao, id de cliente
-  chave estrangeira: id de cliente
-  */
   
   CREATE TABLE acompanhante (
   nome VARCHAR(200) NOT NULL,
@@ -60,10 +45,6 @@ CREATE TABLE cliente (
   CONSTRAINT fk_acompanhante_cartao FOREIGN KEY (acp_idCA) REFERENCES cartao (idCA),
   CONSTRAINT fk_acompanhante_cliente FOREIGN KEY (cliente_idCL , acompanha_cpf ) REFERENCES cliente (idCL , cpf )
   );
-  /*cria tabela: acompanhante 
-  chave primaria: id de cartao, id de cliente
-  chave estrangeira: id de cliente, cpf de clinte que ele acompanha,
-  */
   
   CREATE TABLE motorista (
   idMT INT NOT NULL AUTO_INCREMENT,
@@ -80,10 +61,6 @@ CREATE TABLE cliente (
   rua VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY (idMT, cpf, codigo_carteira)
   );
-  /*cria tabela: motorista 
-  chave primaria: id de motorista, cpf, codigo da carteira de motorista
-  chave estrangeira: nenhuma
-  */
   
   CREATE TABLE onibus (
   idONI INT NOT NULL AUTO_INCREMENT,
@@ -94,10 +71,6 @@ CREATE TABLE cliente (
   PRIMARY KEY ( idONI ),
   CONSTRAINT fk_motorista_onibus FOREIGN KEY (oni_idMT) REFERENCES motorista (idMT)
   );
-   /*cria tabela: onibus
-  chave primaria: id do onibus
-  chave estrangeira: id do motorista,
-  */
   
 CREATE TABLE linha (
   idLI INT NOT NULL AUTO_INCREMENT,
@@ -111,10 +84,6 @@ CREATE TABLE linha (
   CONSTRAINT fk_motorista_linha FOREIGN KEY (lin_idMT) REFERENCES onibus (oni_idMT),
   CONSTRAINT fk_onibus_linha FOREIGN KEY (lin_idONI) REFERENCES onibus (idONI)
   );
-  /*cria tabela: linha
-  chave primaria: id da linha, id do motorista, id do onibus
-  chave estrangeira: id do onibus, id do motorista
-  */
   
   
   CREATE TABLE viagem (
@@ -133,11 +102,6 @@ CREATE TABLE linha (
   CONSTRAINT fk_viagem_linha_motorista FOREIGN KEY (vg_ln_idMT) REFERENCES linha (lin_idMT),
   CONSTRAINT fk_viagem_linha_onibus FOREIGN KEY (vg_ln_idONI) REFERENCES linha (lin_idONI)
   );
-  /*cria tabela: viagem
-  chave primaria: id da viagem
-  chave estrangeira: id do cartão, id da linha, id do onibus, id do motorista
-  */
-  
   
   
   CREATE TABLE recarga  (
@@ -148,7 +112,3 @@ CREATE TABLE linha (
   PRIMARY KEY ( idrecarga ),
   CONSTRAINT  fk_recarga_cartao FOREIGN KEY ( cartao_idCA ) REFERENCES cartao  ( idCA )
   );
-  /*cria tabela: recarga
-  chave primaria: id da recarga
-  chave estrangeira: id do cartao
-  */
