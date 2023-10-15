@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const frontpubli = require('./../../frontend/cliente/index.html')
 
 const dotenv = require("dotenv");
 dotenv.config({path: './.env'}); //lê o arquivo .env na inicialiazaçao.
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', usersRouter);
+app.use('/publico', frontpubli)
 
 
 // catch 404 and forward to error handler
