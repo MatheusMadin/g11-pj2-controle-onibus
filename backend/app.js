@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const frontpubli = require('../doc/cliente/index.html')
+const frontpubli = require('./../../frontend/cliente/index.html')
 
 const dotenv = require("dotenv");
 dotenv.config({path: './.env'}); //lê o arquivo .env na inicialiazaçao.
