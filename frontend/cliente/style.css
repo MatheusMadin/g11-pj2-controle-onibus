@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* começo menu */
+
+.menu {
+    display: flex;
+    width: auto;
+    height: 60px;
+    justify-content: space-around;
+    background-color: #f2b680;
+}
+
+.menu ul{
+    display: flex;
+    margin-top: 17px;
+}
+
+.menu ul li{
+    margin-right: 10px;
+    list-style: none;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #30f2f2;
+}
+
+.menu ul li a:hover{
+    color: #3ed0d0;
+}
+
+/* fim menu */
+
+header {
+    background-color: #bf5e26;
+    background-image: url('../cliente/img/Litoral\ Transporte.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 600px; /* Defina a altura que você deseja para a seção */
+}
+
+.footer {
+    background-color: #f2845c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
