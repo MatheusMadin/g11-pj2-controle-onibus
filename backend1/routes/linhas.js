@@ -10,12 +10,12 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/buscar/:id", async function (req, res, next) {
-  const linhaId = parseInt(req.params.id); 
+  const id = parseInt(req.params.id); 
 
   try {
     const linha = await prisma.linha.findUnique({
       where: {
-        id: linhaId,
+        id: id,
       },
     });
 
@@ -56,7 +56,7 @@ router.put('/editar/:id', async function (req, res, next) {
     const id = parseInt(req.params.id);
     const { nome, origem, destino, horarioPartida, duracao } = req.body;
     
-    const linhaAtualizada = await prisma.linha.update({
+    const linhaUpdate = await prisma.linha.update({
       where: {
         id: id,
       },
@@ -69,7 +69,7 @@ router.put('/editar/:id', async function (req, res, next) {
       },
     });
 
-    res.json(linhaAtualizada);
+    res.json(linhaUpdate);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao atualizar a linha.' });

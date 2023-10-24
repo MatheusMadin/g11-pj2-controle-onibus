@@ -4,9 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const linhasRouter = require('./routes/linhas');
+const indexRouter = require('../backend1/routes/index');
+const usersRouter = require('../backend1/routes/users');
+const linhasRouter = require('../backend1/routes/linhas');
+const sitepubli = require('./routes/index')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/linhas', linhasRouter);
+app.use('/publico', sitepubli);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

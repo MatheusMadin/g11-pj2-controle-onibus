@@ -8,7 +8,7 @@ async function createUser(name, email) {
     data: {
       name,
       email,
-    },
+    }
   });
   return user;
 }
