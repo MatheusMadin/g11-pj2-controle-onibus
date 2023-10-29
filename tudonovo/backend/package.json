@@ -1,0 +1,27 @@
+{
+  "name": "ltrltrnsprt",
+  "version": "1.0.0",
+  "description": "grupo_11",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "repository": {
+    "start": "./b"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusMadin/g11-pj2-controle-onibus/issues"
+  },
+  "homepage": "https://github.com/MatheusMadin/g11-pj2-controle-onibus#readme",
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prisma": "^5.5.2"
+  }
+}
