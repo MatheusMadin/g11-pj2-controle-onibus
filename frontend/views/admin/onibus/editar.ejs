@@ -3,7 +3,7 @@
 
 <head>
   <%- include('../partials/_head.ejs') %>
-    <title>Linhas</title>
+    <title>Onibus - Editar</title>
 </head>
 
 <body>
@@ -21,28 +21,27 @@
                 <h3 class="page-title">
                   <span class="page-title-icon bg-gradient-primary text-white me-2">
                     <i class="mdi mdi-bus"></i>
-                  </span> Linhas
+                  </span> Editar Onibus
                 </h3>
 
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Linhas Cadastrados</h4>
-                  <a href="/admin/linha/cadastrar" class="btn btn-primary">Cadastrar</a>
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th> ID </th>
-                          <th> Horario de Inicio </th>
-                          <th> Horario do Fim </th>
-                          <th> Local de Inicio </th>
-                          <th> Local do Termino </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="forms-sample" id="form">
+                      <div class="form-group">
+                        <label for="id">ID do Onibus</label>
+                        <input type="text" class="form-control" id="id" placeholder="Digete o a Placa do Onibus"
+                          required disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="placa">Placa do Onibus</label>
+                        <input type="text" class="form-control" id="placa" placeholder="Digete o a Placa do Onibus"
+                          required>
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary me-2">Confirmar</button>
+                      <a class="btn btn-danger me-2" href="/admin/onibus">Cancelar</a>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -70,7 +69,7 @@
   <!-- Custom js for this page -->
   <!-- End custom js for this page -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/admin/js/linha/listar.js"></script>
+  <script src="/admin/js/onibus/editar.js"></script>
 </body>
 
 </html>

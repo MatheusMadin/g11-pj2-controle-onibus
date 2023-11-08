@@ -42,15 +42,14 @@ router.get("/buscar/:id", async function (req, res, next) {
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    const { inicio, fim, localinicio, localfim } = req.body;
 
     const novaLinha = await prisma.linha.create({
       data: {
-        nome,
-        origem,
-        destino,
-        horarioPartida: `1970-01-01T${horarioPartida}:00Z`,
-        duracao: parseInt(duracao)
+        inicio: `1970-01-01T${inicio}:00Z`,
+        fim: `1970-01-01T${fim}:00Z`,
+        localinicio,
+        localfim,
       },
     });
 
@@ -64,18 +63,17 @@ router.post("/cadastrar", async (req, res, next) => {
 router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    const { inicio, fim, localinicio, localfim } = req.body;
     
     const linhaAtualizada = await prisma.linha.update({
       where: {
         id: id,
       },
       data: {
-        nome: nome,
-        origem: origem,
-        destino: destino,
-        horarioPartida: `1970-01-01T${horarioPartida}:00Z`,
-        duracao: parseInt(duracao),
+        inicio: `1970-01-01T${inicio}:00Z`,
+        fim: `1970-01-01T${fim}:00Z`,
+        localinicio: localinicio,
+        localfim: localfim
       },
     });
 

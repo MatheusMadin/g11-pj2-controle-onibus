@@ -3,7 +3,7 @@
 
 <head>
   <%- include('../partials/_head.ejs') %>
-    <title>Linha - Cadastrar</title>
+    <title>Linha - Editar</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <h3 class="page-title">
                   <span class="page-title-icon bg-gradient-primary text-white me-2">
                     <i class="mdi mdi-bus"></i>
-                  </span> Cadastrar Linha
+                  </span> Editar Linha
                 </h3>
 
               </div>
@@ -29,6 +29,10 @@
                 <div class="card">
                   <div class="card-body">
                     <form class="forms-sample" id="form">
+                      <div class="form-group">
+                        <label for="horarioInicio">ID</label>
+                        <input type="number" class="form-control" id="id" required disabled>
+                      </div>
                       <div class="row">
                         <div class="form-group col-md-6">
                           <label for="horarioInicio">Horario Inicio</label>
@@ -47,7 +51,8 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label for="localFim">Destino</label>
-                          <input type="text" class="form-control" id="localFim" placeholder="Digite o local de termino">
+                          <input type="text" class="form-control" id="localFim" placeholder="Digite o local de termino"
+                            required>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary me-2">Confirmar</button>
@@ -80,7 +85,7 @@
   <!-- Custom js for this page -->
   <!-- End custom js for this page -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/admin/js/linha/cadastrar.js"></script>
+  <script src="/admin/js/linha/editar.js"></script>
 </body>
 
 </html>
