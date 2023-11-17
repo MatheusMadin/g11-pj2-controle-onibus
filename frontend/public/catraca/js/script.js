@@ -19,3 +19,19 @@ function atualizarRelogio() {
 
 atualizarRelogio();
 setInterval(atualizarRelogio, 1000); // Atualiza a cada 1 segundo
+
+const formu = document.querySelector('#cartdgt');
+
+formu.addEventListener('submit', function async (event) {
+  const codigocartao = document.querySelector('#campo1').value;
+  const data = {codigocartao};
+  
+  try {
+     const response = await axios.post("http://127.0.0.1:3001/catraca");
+     response.status(200);
+     
+  } catch (e) {
+    e.message:
+  }
+});
+

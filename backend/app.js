@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const linhaRouter = require('./routes/linha');
 const onibusRouter = require('./routes/onibus');
+const catracaRouter = require('./routes/catraca');
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/linha', linhaRouter);
 app.use('/api/onibus', onibusRouter);
+app.use('/api/onibus', catracaRouter);
 
 module.exports = app;
