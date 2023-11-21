@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("success", "Cadastro realizado sucesso");
 
         const id = response.data.id;
-        window.location.href = `http://localhost:3001/admin/onibus/`;
+        window.location.href = `http://localhost:3001/admin/onibus/exibir/${id}`;
       } catch (error) {
         console.error("danger", error.message);
       }

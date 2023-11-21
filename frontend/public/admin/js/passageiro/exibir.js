@@ -4,11 +4,14 @@ document.addEventListener("DOMContentLoaded", async (event) => {
   const urlId = url.split("/").pop();
 
   try {
-    const response = await axios.get(`http://localhost:3000/api/onibus/buscar/${urlId}`);
-    const onibus = response.data;
+    const response = await axios.get(`http://localhost:3000/api/passageiro/buscar/${urlId}`);
+    const passageiro = response.data;
 
-    document.querySelector("#id").textContent = onibus.id;
-    document.querySelector("#placa").textContent = onibus.placa;
+    document.querySelector("#id").textContent = passageiro.id;
+    document.querySelector("#nome").textContent = passageiro.nome;
+    document.querySelector("#cpf").textContent = passageiro.cpf;
+    document.querySelector("#saldo").textContent = passageiro.saldo;
+    document.querySelector("#usuarioId").textContent = passageiro.usuario_id;
 
     const crudButtons = document.getElementById('crudButtons');
     // Link para Editar

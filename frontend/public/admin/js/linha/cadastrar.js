@@ -12,14 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const localfim = document.querySelector("#localFim").value;
 
       const data = { inicio, fim, localinicio, localfim };
-      console.log(data)
       try {
         const response = await axios.post("http://localhost:3000/api/linha/cadastrar", data);
 
         console.log("success", "Cadastro realizado sucesso");
 
         const id = response.data.id;
-        window.location.href = `http://localhost:3001/admin/linha/`;
+        window.location.href = `http://localhost:3001/admin/linha/exibir/${id}`;
       } catch (error) {
         console.error("danger", error.message);
       }

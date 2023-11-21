@@ -23,7 +23,7 @@ model cart_o {
 model cliente {
   id         Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
   nome       String?  @db.VarChar(200)
-  saldo      Decimal? @db.Decimal(2, 0)
+  saldo      Decimal? @db.Decimal(6, 0)
   cpf        String?  @db.VarChar(14)
   usuario_id Int
   cart_o     cart_o[]
@@ -47,8 +47,8 @@ model cliente_has_viagem {
 
 model linha {
   id          Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
-  inicio      DateTime? @db.DateTime(2)
-  fim         DateTime? @db.DateTime(2)
+  inicio      DateTime? @db.DateTime(0)
+  fim         DateTime? @db.DateTime(0)
   localinicio String?   @db.VarChar(45)
   localfim    String?   @db.VarChar(45)
   viagem      viagem[]

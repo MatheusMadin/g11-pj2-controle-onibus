@@ -3,6 +3,7 @@
 
 <head>
   <%- include('../partials/_head.ejs') %>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
     <title>Onibus</title>
 </head>
 
@@ -23,31 +24,31 @@
                     <i class="mdi mdi-bus"></i>
                   </span> Onibus
                 </h3>
-
               </div>
+
               <div class="row">
                 <div class="col-lg-12 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Onibus Cadastrados</h4>
-                      <a href="/admin/onibus/cadastrar" class="btn btn-primary">Cadastrar</a>
-                      <div class="table-responsive">
-                        <table class="table table-hover">
-                          <thead>
-                            <tr>
-                              <th> ID </th>
-                              <th> Placa </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                        </table>
+                      <div class="d-flex justify-content-between mb-3">
+                        <h4 class="card-title">Onibus Cadastrados</h4>
+                        <a href="/admin/onibus/cadastrar" class="btn btn-primary">Cadastrar</a>
                       </div>
+                      <table class="table table-hover" id="table">
+                        <thead>
+                          <tr>
+                            <th> ID </th>
+                            <th class="col-12"> Placa </th>
+                            <th data-priority="1">Config</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:partials/_footer.html -->
@@ -71,8 +72,52 @@
   <!-- endinject -->
   <!-- Custom js for this page -->
   <!-- End custom js for this page -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/admin/js/onibus/listar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $('#table').DataTable({
+      "language": {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-BR.json',
+      },
+      "ajax": {
+        "url": "http://localhost:3000/api/onibus/listar",
+        "dataSrc": "" // O atributo que contém os dados no JSON retornado
+      },
+      "columns": [
+        { "data": "id" },
+        { "data": "placa" },
+        { "data": null, "defaultContent": "" },
+      ],
+      "createdRow": function (row, data, dataIndex) {
+        // Adiciona os botões à terceira coluna
+        const linkContainer = document.createElement("div");
+        linkContainer.classList.add("btn-group");
+        linkContainer.setAttribute("role", "group");
+
+        const showLink = document.createElement("a");
+        showLink.innerHTML = "Exibir";
+        showLink.classList.add("btn", "btn-inverse-info", "btn-sm");
+        showLink.href = `http://localhost:3001/admin/onibus/exibir/${data.id}`;
+
+        const editLink = document.createElement("a");
+        editLink.innerHTML = "Editar";
+        editLink.classList.add("btn", "btn-inverse-success", "btn-sm");
+        editLink.href = `http://localhost:3001/admin/onibus/editar/${data.id}`;
+
+        const deleteLink = document.createElement("a");
+        deleteLink.innerHTML = "Deletar";
+        deleteLink.classList.add("btn", "btn-inverse-danger", "btn-sm");
+        deleteLink.href = `http://localhost:3001/admin/onibus/excluir/${data.id}`;
+
+        linkContainer.appendChild(showLink);
+        linkContainer.appendChild(editLink);
+        linkContainer.appendChild(deleteLink);
+
+        $(row).find("td:eq(2)").html(linkContainer);
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -14,4 +14,9 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/count", async function (req, res, next) {
+  const motorista = await prisma.motorista.count()
+  res.json(motorista);
+});
+
 module.exports = router;

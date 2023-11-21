@@ -28,7 +28,7 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <form class="forms-sample">
+                    <form class="forms-sample" id="form">
                       <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" placeholder="Nome" required>
@@ -38,12 +38,12 @@
                         <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
                       </div>
                       <div class="form-group">
-                        <label for="telefone">Saldo</label>
-                        <input type="tel" class="form-control" id="telefone" placeholder="(00) 0000-0000" required>
+                        <label for="saldo">Saldo</label>
+                        <input type="number" class="form-control" id="saldo" required>
                       </div>
                       <div class="form-group">
-                        <label for="email">Endereço de Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <label for="usuarioid">Id do Usuario</label>
+                        <input type="number" class="form-control" id="usuarioid" required>
                       </div>
                       <button type="submit" class="btn btn-primary me-2">Confirmar</button>
                       <button class="btn btn-light">Cancelar</button>
@@ -63,16 +63,18 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="assets/js/off-canvas.js"></script>
-  <script src="assets/js/hoverable-collapse.js"></script>
-  <script src="assets/js/misc.js"></script>
+  <script src="/admin/assets/js/off-canvas.js"></script>
+  <script src="/admin/assets/js/hoverable-collapse.js"></script>
+  <script src="/admin/assets/js/misc.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/admin/js/passageiro/cadastrar.js"></script>
   <!-- End custom js for this page -->
 </body>
 

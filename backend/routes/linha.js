@@ -19,6 +19,11 @@ router.get("/listar", async function (req, res, next) {
   res.json(linha);
 });
 
+router.get("/count", async function (req, res, next) {
+  const linha = await prisma.linha.count()
+  res.json(linha);
+});
+
 router.get("/buscar/:id", async function (req, res, next) {
   const linhaId = parseInt(req.params.id); 
 
