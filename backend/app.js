@@ -8,6 +8,7 @@ const linhaRouter = require('./routes/linha');
 const onibusRouter = require('./routes/onibus');
 const passageiroRouter = require('./routes/passageiro');
 const motoristaRouter = require('./routes/motorista');
+const catracaRouter = require('./routes/catraca');
 
 const app = express();
 var corsOptions = {
@@ -25,5 +26,6 @@ app.use('/api/linha', linhaRouter);
 app.use('/api/onibus', onibusRouter);
 app.use('/api/passageiro', passageiroRouter);
 app.use('/api/motorista', motoristaRouter);
+app.use('/api/onibus', catracaRouter);
 
 module.exports = app;
