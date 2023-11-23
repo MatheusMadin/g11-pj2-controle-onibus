@@ -9,7 +9,7 @@ datasource db {
 
 model cart_o {
   id                 Int                  @unique(map: "id_UNIQUE") @default(autoincrement())
-  saldo              Decimal?             @db.Decimal(8, 2)
+  saldo              Decimal?             @db.Decimal(8, 2) @default(0.00)
   cliente_id         Int
   codigocartao       String?              @db.VarChar(45)
   cliente            cliente              @relation(fields: [cliente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cartão_cliente1")

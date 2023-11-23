@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const response = await axios.get(`http://localhost:3000/api/passageiro/buscar/${urlId}`);
     const passageiro = response.data;
 
-    document.querySelector("#id").value = passageiro.id;
     document.querySelector("#nome").value = passageiro.nome;
     document.querySelector("#cpf").value = passageiro.cpf;
     document.querySelector("#saldo").value = passageiro.saldo;

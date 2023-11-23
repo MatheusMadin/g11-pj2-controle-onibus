@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const cpf = document.querySelector("#cpf").value;
       const saldo = document.querySelector("#saldo").value;
       const usuarioId = document.querySelector("#usuarioid").value;
+      const codigocartao = document.querySelector('#codigocartao').value;
 
-      const data = { nome, cpf, saldo, usuarioId };
+      const data = { nome, cpf, saldo, usuarioId, codigocartao };
 
       try {
         const response = await axios.post("http://localhost:3000/api/passageiro/cadastrar", data);
