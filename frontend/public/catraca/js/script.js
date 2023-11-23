@@ -31,7 +31,9 @@ formu.addEventListener('submit', function async (event) {
      response.status(200);
      
   } catch (e) {
-    e.message:
+    const error = e;
+    console.log(error);
+    e.message = "deu merda ae parcerinho";
   }
 });
 
