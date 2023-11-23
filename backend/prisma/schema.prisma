@@ -9,7 +9,7 @@ datasource db {
 
 model cart_o {
   id                 Int                  @unique(map: "id_UNIQUE") @default(autoincrement())
-  saldo              Decimal?             @db.Decimal(2, 0)
+  saldo              Decimal?             @db.Decimal(8, 2)
   cliente_id         Int
   codigocartao       String?              @db.VarChar(45)
   cliente            cliente              @relation(fields: [cliente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cartão_cliente1")
@@ -23,7 +23,7 @@ model cart_o {
 model cliente {
   id         Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
   nome       String?  @db.VarChar(200)
-  saldo      Decimal? @db.Decimal(2, 0)
+  saldo      Decimal? @db.Decimal(8, 2)
   cpf        String?  @db.VarChar(14)
   usuario_id Int
   cart_o     cart_o[]
@@ -34,7 +34,7 @@ model cliente {
 
 model cliente_has_viagem {
   viagem_id Int
-  tarifa    Decimal? @db.Decimal(2, 0)
+  tarifa    Decimal? @db.Decimal(5, 2)
   data      String?  @db.VarChar(45)
   cart_o_id Int      @map("cartão_id")
   cart_o    cart_o   @relation(fields: [cart_o_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_has_viagem_cartão1")
@@ -47,8 +47,8 @@ model cliente_has_viagem {
 
 model linha {
   id          Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
-  inicio      DateTime? @db.DateTime(2)
-  fim         DateTime? @db.DateTime(2)
+  inicio      DateTime? @db.DateTime(0)
+  fim         DateTime? @db.DateTime(0)
   localinicio String?   @db.VarChar(45)
   localfim    String?   @db.VarChar(45)
   viagem      viagem[]

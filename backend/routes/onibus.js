@@ -19,8 +19,13 @@ router.get("/listar", async function (req, res, next) {
   res.json(onibus);
 });
 
+router.get("/count", async function (req, res, next) {
+  const onibus = await prisma.onibus.count()
+  res.json(onibus);
+});
+
 router.get("/buscar/:id", async function (req, res, next) {
-  const onibusId = parseInt(req.params.id); 
+  const onibusId = parseInt(req.params.id);
 
   try {
     const onibus = await prisma.onibus.findUnique({
@@ -61,7 +66,7 @@ router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
     const { placa } = req.body;
-    
+
     const onibusAtualizada = await prisma.onibus.update({
       where: {
         id: id,

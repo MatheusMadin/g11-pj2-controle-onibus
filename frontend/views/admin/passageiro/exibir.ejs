@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/_head.ejs') %>
-        <title>Onibus - Exibir</title>
+        <title>Passageiro - Exibir</title>
 </head>
 
 <body>
@@ -21,17 +21,20 @@
                                 <h3 class="page-title">
                                     <span class="page-title-icon bg-gradient-primary text-white me-2">
                                         <i class="mdi mdi-bus"></i>
-                                    </span> Onibus
+                                    </span> Passageiro
                                 </h3>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 grid-margin stretch-card">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Onibus</h4>
+                                            <h4 class="card-title">Passageiro</h4>
                                             <ul>
                                                 <li><strong>Id.:</strong> <span id="id"></span></li>
-                                                <li><strong>Placa:</strong> <span id="placa"></span></li>
+                                                <li><strong>Nome:</strong> <span id="nome"></span></li>
+                                                <li><strong>CPF:</strong> <span id="cpf"></span></li>
+                                                <li><strong>Saldo:</strong> <span id="saldo"></span></li>
+                                                <li><strong>UsuarioId:</strong> <span id="usuarioId"></span></li>
                                             </ul>
                                             <div class="btn-group" id="crudButtons">
                                             </div>
@@ -63,7 +66,7 @@
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/admin/js/onibus/exibir.js"></script>
+    <script src="/admin/js/passageiro/exibir.js"></script>
 </body>
 
 </html>

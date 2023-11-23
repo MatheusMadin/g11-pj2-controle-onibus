@@ -28,7 +28,7 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <form class="forms-sample">
+                    <form class="forms-sample" id="form">
                       <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input type="text" class="form-control" id="nome" placeholder="Nome" required>
@@ -38,12 +38,17 @@
                         <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
                       </div>
                       <div class="form-group">
+<<<<<<< HEAD
                         <label for="number">Saldo</label>
                         <input type="number" class="form-control" id="telefone" placeholder="00,00" required>
+=======
+                        <label for="saldo">Saldo</label>
+                        <input type="text" class="form-control" id="saldo" required>
+>>>>>>> 589f06e4f8cb30efafb78fd9138ff33d5584a881
                       </div>
                       <div class="form-group">
-                        <label for="email">Endereço de Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <label for="usuarioid">Id do Usuario</label>
+                        <input type="number" class="form-control" id="usuarioid" required>
                       </div>
                       <div class="form-group">
                         <label for="number">codigo do cartão</label>
@@ -77,6 +82,8 @@
   <script src="/admin/assets/js/misc.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/admin/js/passageiro/cadastrar.js"></script>
   <!-- End custom js for this page -->
 </body>
 
