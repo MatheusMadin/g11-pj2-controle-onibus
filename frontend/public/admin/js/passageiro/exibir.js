@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     document.querySelector("#cpf").textContent = passageiro.cpf;
     document.querySelector("#saldo").textContent = passageiro.saldo;
     document.querySelector("#usuarioId").textContent = passageiro.usuario_id;
+    document.querySelector("#codigocartão").textContent = 
 
     const crudButtons = document.getElementById('crudButtons');
     // Link para Editar
