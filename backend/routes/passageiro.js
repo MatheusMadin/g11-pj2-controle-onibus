@@ -101,7 +101,7 @@ router.put('/editar/:id', async function (req, res, next) {
             }
         })
 
-        res.json(passageiroAtualizada);
+        res.json(passageiroAtualizada, cartaoAtualizada);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Erro ao atualizar a passageiro.' });
@@ -116,8 +116,13 @@ router.delete("/excluir/:id", async function (req, res, next) {
                 id: id,
             },
         });
+        const cartaoExcluida = await prisma.cliente.delete({
+            where: {
+                id: passageiroExcluida,
+            }
+        });
 
-        if (passageiroExcluida) {
+        if (passageiroExcluida && cartaoExcluida) {
             res.json({ message: "Passageiro excluída com sucesso." });
         } else {
             res.status(404).json({ error: "Passageiro não encontrada." });
