@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <%- include('../partials/_head.ejs') %>
+    <title>Linha - Editar</title>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <%- include('../partials/_navbar.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <%- include('../partials/_sidebar.ejs') %>
+          <!-- partial -->
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="page-header">
+                <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white me-2">
+                    <i class="mdi mdi-bus"></i>
+                  </span> Editar Linha
+                </h3>
+
+              </div>
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="forms-sample" id="form">
+                      <div class="form-group">
+                        <label for="horarioInicio">ID</label>
+                        <input type="number" class="form-control" id="id" required disabled>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="horarioInicio">Horario Inicio</label>
+                          <input type="time" class="form-control" id="horarioInicio" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="horarioFim">Horario Fim</label>
+                          <input type="time" class="form-control" id="horarioFim" required>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-6">
+                          <label for="localInicio">Local de Partida</label>
+                          <input type="text" class="form-control" id="localInicio"
+                            placeholder="Digiteo o local de inicio" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="localFim">Destino</label>
+                          <input type="text" class="form-control" id="localFim" placeholder="Digite o local de termino"
+                            required>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary me-2">Confirmar</button>
+                      <button class="btn btn-danger">Cancelar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <%- include('../partials/_footer.ejs') %>
+              <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="/admin/assets/js/off-canvas.js"></script>
+  <script src="/admin/assets/js/hoverable-collapse.js"></script>
+  <script src="/admin/assets/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <!-- End custom js for this page -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/admin/js/linha/editar.js"></script>
+</body>
+
+</html>
