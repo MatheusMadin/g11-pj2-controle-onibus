@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 router.get("/listar", async function (req, res, next) {
     const passageiro = await prisma.cliente.findMany();
     const codigocartao = await prisma.cart_o.findMany();
-    res.json(passageiro, codigocartao);
+    res.json({passageiro, codigocartao});
 });
 
 router.get("/count", async function (req, res, next) {
@@ -61,6 +61,7 @@ router.post("/cadastrar", async (req, res, next) => {
             data: {
                 nome,
                 cpf
+                
             },
         });
         const novocartao =await prisma.cart_o.create({
