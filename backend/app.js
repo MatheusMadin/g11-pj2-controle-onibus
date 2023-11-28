@@ -11,11 +11,12 @@ const motoristaRouter = require('./routes/motorista');
 const catracaRouter = require('./routes/catraca');
 
 const app = express();
-var corsOptions = {
-    origin: 'http://localhost:3001',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
-app.use(cors(corsOptions));
+app.use(cors())
+// var corsOptions = {
+//     origin: 'http://localhost:3001',
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   }
+// app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

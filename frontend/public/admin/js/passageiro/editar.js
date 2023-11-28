@@ -5,12 +5,14 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
   try {
     const response = await axios.get(`http://localhost:3000/api/passageiro/buscar/${urlId}`);
-    const passageiro = response.data;
+    const passageiro = response.data.passageiro;
+    const cartao = response.data.cartao;
 
     document.querySelector("#nome").value = passageiro.nome;
     document.querySelector("#cpf").value = passageiro.cpf;
     document.querySelector("#saldo").value = passageiro.saldo;
     document.querySelector("#usuarioid").value = passageiro.usuario_id;
+    document.querySelector("#codigocartão").value = cartao.codigocartao;
   } catch (error) {
     console.error("danger", error.message);
   }
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
       const cpf = document.querySelector("#cpf").value;
       const saldo = document.querySelector("#saldo").value;
       const usuarioId = document.querySelector("#usuarioid").value;
+      const codigocartao = document.querySelector("#codigocartao").value
 
       const data = { id, nome, saldo, cpf, usuarioId };
 
