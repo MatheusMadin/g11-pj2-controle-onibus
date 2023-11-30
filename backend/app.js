@@ -12,16 +12,17 @@ const catracaRouter = require('./routes/catraca');
 
 const app = express();
 app.use(cors())
-// var corsOptions = {
-//     origin: 'http://localhost:3001',
-//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-//   }
-// app.use(cors(corsOptions));
+var corsOptions = {
+    origin: 'http://localhost:3001',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static('uploads'));
 
 app.use('/api/linha', linhaRouter);
 app.use('/api/onibus', onibusRouter);

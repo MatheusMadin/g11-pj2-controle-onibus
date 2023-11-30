@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/_head.ejs') %>
-        <title>Linha - Exibir</title>
+        <title>Onibus - Exibir</title>
 </head>
 
 <body>
@@ -20,23 +20,20 @@
                             <div class="page-header">
                                 <h3 class="page-title">
                                     <span class="page-title-icon bg-gradient-primary text-white me-2">
-                                        <i class="mdi mdi-map"></i>
-                                    </span> Linha Exibir
+                                        <i class="mdi mdi-account-card-details"></i>
+                                    </span> Motorista
                                 </h3>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 grid-margin stretch-card">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">Linha</h4>
+                                            <h4 class="card-title">Motorista</h4>
                                             <ul>
                                                 <li><strong>Id.:</strong> <span id="id"></span></li>
-                                                <li><strong>Horario Partida:</strong> <span id="horarioInicio"></span>
-                                                </li>
-                                                <li><strong>Horario Termino:</strong> <span id="horarioFim"></span></li>
-                                                <li><strong>Local de Partida:</strong> <span id="localInicio"></span>
-                                                </li>
-                                                <li><strong>Destino:</strong> <span id="localFim"></span></li>
+                                                <li><strong>Nome:</strong> <span id="nome"></span></li>
+                                                <li><strong>Foto:</strong></li>
+                                                <img id="foto" height="300">
                                             </ul>
                                             <div class="btn-group" id="crudButtons">
                                             </div>
@@ -68,7 +65,7 @@
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/admin/js/linha/exibir.js"></script>
+    <script src="/admin/js/motorista/exibir.js"></script>
 </body>
 
 </html>

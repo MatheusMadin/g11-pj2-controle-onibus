@@ -18,13 +18,12 @@ router.get("/", async (req, res) => {
 router.get("/listar", async function (req, res, next) {
     const passageiro = await prisma.cliente.findMany();
     const codigocartao = await prisma.cart_o.findMany();
-    res.json({passageiro, codigocartao});
+    res.json(passageiro);
 });
 
 router.get("/count", async function (req, res, next) {
     const passageiro = await prisma.cliente.count()
-    const codigocartao = await prisma.cart_o.count()
-    res.json(passageiro, codigocartao);
+    res.json(passageiro);
 });
 
 router.get("/buscar/:id", async function (req, res, next) {
@@ -36,14 +35,14 @@ router.get("/buscar/:id", async function (req, res, next) {
                 id: passageiroId,
             },
         });
-        const cartao = await prisma.cart_o.findUnique({
+        const cartao = await prisma.cart_o.findFirst({
             where: { 
                 cliente_id: passageiroId
             }
         })
 
         if (passageiro && cartao) {
-            res.json(passageiro, cartao);
+            res.json({passageiro, cartao});
         } else {
             res.status(404).json({ error: 'Passageiro não encontrada' });
         }
@@ -60,19 +59,19 @@ router.post("/cadastrar", async (req, res, next) => {
         const novoPassageiro = await prisma.cliente.create({
             data: {
                 nome,
-                cpf
-                
+                cpf,
+                usuario_id: 1   
             },
         });
         const novocartao =await prisma.cart_o.create({
             data: {
                 cliente_id: novoPassageiro.id,
                 saldo: saldo,
-                codigocartao: Number(codigocartao)
+                codigocartao: codigocartao
             }
         })
 
-        res.json(novoPassageiro, novocartao);
+        res.json({novoPassageiro, novocartao});
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Erro ao criar passageiro." });
@@ -102,7 +101,7 @@ router.put('/editar/:id', async function (req, res, next) {
             }
         })
 
-        res.json(passageiroAtualizada, cartaoAtualizada);
+        res.json({passageiroAtualizada, cartaoAtualizada});
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Erro ao atualizar a passageiro.' });

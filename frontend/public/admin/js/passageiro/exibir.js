@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", async (event) => {
   try {
     const response = await axios.get(`http://localhost:3000/api/passageiro/buscar/${urlId}`);
     const passageiro = response.data.passageiro;
+    console.log(passageiro)
     const cartao = response.data.cartao;
-
+    console.log(cartao)
     document.querySelector("#id").textContent = passageiro.id;
     document.querySelector("#nome").textContent = passageiro.nome;
     document.querySelector("#cpf").textContent = passageiro.cpf;
+    document.querySelector("#saldo").textContent = cartao.saldo;
     document.querySelector("#usuarioId").textContent = passageiro.usuario_id;
-    document.querySelector("#codigocartão").textContent = cartao.codigocartao;
+    document.querySelector("#codigocartao").textContent = cartao.codigocartao;
 
     const crudButtons = document.getElementById('crudButtons');
     // Link para Editar
