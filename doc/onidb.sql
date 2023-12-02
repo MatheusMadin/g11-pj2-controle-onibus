@@ -131,13 +131,14 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `onidb`.`cliente_has_viagem`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `onidb`.`cliente_has_viagem` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `viagem_id` INT(11) NOT NULL,
   `tarifa` DECIMAL(2,0) NULL DEFAULT NULL,
   `data` VARCHAR(45) NULL DEFAULT NULL,
-  `cartão_id` INT(11) NOT NULL,
   `cliente_id` INT(11) NOT NULL,
   INDEX `fk_cliente_has_viagem_viagem1_idx` (`viagem_id` ASC),
-  INDEX `fk_cliente_has_viagem_cartão1_idx` (`cartão_id` ASC),
+  PRIMARY KEY (`id`, `viagem_id`, `cliente_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_cliente_has_viagem_cliente1_idx` (`cliente_id` ASC),
   CONSTRAINT `fk_cliente_has_viagem_viagem1`
     FOREIGN KEY (`viagem_id`)
