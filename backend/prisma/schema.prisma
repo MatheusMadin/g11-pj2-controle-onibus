@@ -7,48 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model cart_o {
-  id                 Int                  @unique(map: "id_UNIQUE") @default(autoincrement())
-  saldo              Decimal?             @db.Decimal(8, 2) @default(0.00)
-  cliente_id         Int
-  codigocartao       String?              @db.VarChar(45)
-  cliente            cliente              @relation(fields: [cliente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cartão_cliente1")
-  cliente_has_viagem cliente_has_viagem[]
-
-  @@id([id, cliente_id])
-  @@index([cliente_id], map: "fk_cartão_cliente1_idx")
-  @@map("cartão")
-}
-
 model cliente {
-  id         Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
-  nome       String?  @db.VarChar(200)
-  saldo      Decimal? @db.Decimal(8, 2)
-  cpf        String?  @db.VarChar(14)
-  usuario_id Int
-  cart_o     cart_o[]
-  usuario    usuario  @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_usuario")
+  id                 Int                  @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome               String?              @db.VarChar(200)
+  saldo              Decimal?             @db.Decimal(8, 2)
+  cpf                String?              @db.VarChar(14)
+  usuario_id         Int
+  codigocartao       String?              @db.VarChar(45)
+  usuario            usuario              @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_usuario")
+  cliente_has_viagem cliente_has_viagem[]
 
   @@index([usuario_id], map: "fk_cliente_usuario_idx")
 }
 
 model cliente_has_viagem {
-  viagem_id Int
-  tarifa    Decimal? @db.Decimal(5, 2)
-  data      String?  @db.VarChar(45)
-  cart_o_id Int      @map("cartão_id")
-  cart_o    cart_o   @relation(fields: [cart_o_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_has_viagem_cartão1")
-  viagem    viagem   @relation(fields: [viagem_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_has_viagem_viagem1")
+  id         Int      @id
+  viagem_id  Int
+  tarifa     Decimal? @db.Decimal(8, 2)
+  data       String?  @db.VarChar(45)
+  cliente_id Int
+  cliente    cliente  @relation(fields: [cliente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_has_viagem_cliente1")
+  viagem     viagem   @relation(fields: [viagem_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_has_viagem_viagem1")
 
-  @@id([cart_o_id, viagem_id])
-  @@index([cart_o_id], map: "fk_cliente_has_viagem_cartão1_idx")
   @@index([viagem_id], map: "fk_cliente_has_viagem_viagem1_idx")
+  @@index([cliente_id], map: "fk_cliente_has_viagem_cliente1_idx")
 }
 
 model linha {
   id          Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
-  inicio      DateTime? @db.DateTime(0)
-  fim         DateTime? @db.DateTime(0)
+  inicio      DateTime? @db.DateTime(2)
+  fim         DateTime? @db.DateTime(2)
   localinicio String?   @db.VarChar(45)
   localfim    String?   @db.VarChar(45)
   viagem      viagem[]

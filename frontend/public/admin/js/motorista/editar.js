@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               }
             });
 
-            alert("Motorista editado com sucesso.");
-            // window.location.href = `/motoristas/exibir/${id}`;
+            window.location.href = `http://localhost:3001/admin/motorista/exibir/${id}`;
           } catch (error) {
             console.log(error);
             alert(error.response.data.mensagem);

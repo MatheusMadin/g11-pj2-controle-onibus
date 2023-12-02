@@ -1,14 +1,13 @@
 var express = require("express");
 var router = express.Router();
-const { PrismaClient , Prisma } = require("@prisma/client");
+const { PrismaClient, Prisma } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
 router.get("/", async (req, res) => {
     try {
         const passageiro = await prisma.cliente.findMany();
-        const codigocartao = await prisma.cart_o.findMany();
-        res.json(passageiro, codigocartao);
+        res.json(passageiro);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Erro ao obter os dados dos Passageiro." });
@@ -17,7 +16,6 @@ router.get("/", async (req, res) => {
 
 router.get("/listar", async function (req, res, next) {
     const passageiro = await prisma.cliente.findMany();
-    const codigocartao = await prisma.cart_o.findMany();
     res.json(passageiro);
 });
 
@@ -28,21 +26,19 @@ router.get("/count", async function (req, res, next) {
 
 router.get("/buscar/:id", async function (req, res, next) {
     const passageiroId = parseInt(req.params.id);
-
     try {
         const passageiro = await prisma.cliente.findUnique({
             where: {
                 id: passageiroId,
             },
         });
-        const cartao = await prisma.cart_o.findFirst({
-            where: { 
-                cliente_id: passageiroId
+        const usuario = await prisma.usuario.findUnique({
+            where: {
+                id: passageiro.usuario_id
             }
         })
-
-        if (passageiro && cartao) {
-            res.json({passageiro, cartao});
+        if (passageiro) {
+            res.json({passageiro, usuario});
         } else {
             res.status(404).json({ error: 'Passageiro não encontrada' });
         }
@@ -60,18 +56,13 @@ router.post("/cadastrar", async (req, res, next) => {
             data: {
                 nome,
                 cpf,
-                usuario_id: 1   
+                saldo,
+                codigocartao,
+                usuario_id: 1
             },
         });
-        const novocartao =await prisma.cart_o.create({
-            data: {
-                cliente_id: novoPassageiro.id,
-                saldo: saldo,
-                codigocartao: codigocartao
-            }
-        })
 
-        res.json({novoPassageiro, novocartao});
+        res.json(novoPassageiro);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Erro ao criar passageiro." });
@@ -81,27 +72,21 @@ router.post("/cadastrar", async (req, res, next) => {
 router.put('/editar/:id', async function (req, res, next) {
     try {
         const id = parseInt(req.params.id);
-        const { nome, cpf, saldo,codigocartao } = req.body;
+        const { nome, cpf, saldo, codigocartao } = req.body;
 
-        const passageiroAtualizada = await prisma.cliente.update({
+        const passageiroAtualizado = await prisma.cliente.update({
             where: {
                 id: id,
             },
             data: {
                 nome,
                 saldo,
-                cpf
+                cpf,
+                codigocartao
             },
         });
-        const cartaoAtualizada = await prisma.cart_o.update({
-            where:{
-                codigocartao: codigocartao,
-                cliente_id: passageiroAtualizada.id
-
-            }
-        })
-
-        res.json({passageiroAtualizada, cartaoAtualizada});
+       
+        res.json(passageiroAtualizado);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Erro ao atualizar a passageiro.' });
@@ -111,18 +96,13 @@ router.put('/editar/:id', async function (req, res, next) {
 router.delete("/excluir/:id", async function (req, res, next) {
     try {
         const id = parseInt(req.params.id);
-        const passageiroExcluida = await prisma.cliente.delete({
+        const passageiroExcluido = await prisma.cliente.delete({
             where: {
                 id: id,
             },
         });
-        const cartaoExcluida = await prisma.cliente.delete({
-            where: {
-                id: passageiroExcluida,
-            }
-        });
 
-        if (passageiroExcluida && cartaoExcluida) {
+        if (passageiroExcluido) {
             res.json({ message: "Passageiro excluída com sucesso." });
         } else {
             res.status(404).json({ error: "Passageiro não encontrada." });
@@ -133,4 +113,29 @@ router.delete("/excluir/:id", async function (req, res, next) {
     }
 });
 
+router.put('/recarga', async function (req, res, next) {
+    try {
+
+        const { cpf, valor } = req.body;
+        const passageiro = await prisma.cliente.findFirst({
+            where: {
+                cpf: cpf
+            }
+        })
+
+        const passageiroRecarga = await prisma.cliente.update({
+            where: {
+                id: passageiro.id
+            },
+            data: {
+                saldo: parseFloat(passageiro.saldo) + parseFloat(valor),
+            }
+        })
+        
+        res.json(passageiroRecarga);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Erro ao atualizar a passageiro.' });
+    }
+});
 module.exports = router;

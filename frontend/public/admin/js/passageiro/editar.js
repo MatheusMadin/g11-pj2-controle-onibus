@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     document.querySelector("#nome").value = passageiro.nome;
     document.querySelector("#cpf").value = passageiro.cpf;
     document.querySelector("#saldo").value = passageiro.saldo;
-    document.querySelector("#usuarioid").value = passageiro.usuario_id;
-    document.querySelector("#codigocartão").value = cartao.codigocartao;
+    document.querySelector("#codigoCartao").value = passageiro.codigocartao;
   } catch (error) {
     console.error("danger", error.message);
   }
@@ -22,21 +21,18 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     event.preventDefault();
 
     if (form.checkValidity()) {
-      const id = document.querySelector("#id").value;
       const nome = document.querySelector("#nome").value;
       const cpf = document.querySelector("#cpf").value;
       const saldo = document.querySelector("#saldo").value;
-      const usuarioId = document.querySelector("#usuarioid").value;
-      const codigocartao = document.querySelector("#codigocartao").value
+      const codigocartao = document.querySelector("#codigoCartao").value;
 
-      const data = { id, nome, saldo, cpf, usuarioId };
+      const data = { nome, saldo, cpf, codigocartao };
 
       try {
-        const response = await axios.put(`http://localhost:3000/api/passageiro/editar/${data.id}`, data);
+        const response = await axios.put(`http://localhost:3000/api/passageiro/editar/${urlId}`, data);
 
         console.log("success", "Edição realizada com sucesso");
 
-        const id = response.data.id;
         window.location.href = `http://localhost:3001/admin/passageiro/`;
       } catch (error) {
         console.error("danger", error.message);
