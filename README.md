@@ -1,12 +1,22 @@
 <h1>Oque é este projeto?</h1>
 
-Este projeto carrega consigo, uma interface publica de um site para uma empresa de transportes publicos, uma interface administrativa da empresa, e um script de controle de catraca.
+Catraca Eletrônica de Ônibus - Projeto Integrador IFSP
+
+Este é um projeto de catraca de ônibus desenvolvido no IFSP de Caraguatatuba, dividido em três interfaces:
+
+ Catraca:Nesta interface, ocorre a verificação da validade das carteirinhas dos passageiros antes de permitir a entrada no ônibus.
+
+ Página Online:Uma página pública da empresa onde quem possui a carteirinha pode recarregá-la online, de qualquer lugar, sem esforço, informações sobre linhas, horários, etc...
+
+ Menu Administrativo:Uma página privada onde os usuários autorizados podem cadastrar e editar motoristas, linhas e passageiros.
+
 
 <h1>Tecnologias utilizadas</h1>
 
-Este projeto utiliza o bootstrap para estilizações das interfaces, node.js para o funcionamento do backend, prisma como nosso ORM.
+Este projeto utiliza o bootstrap para estilizações das interfaces, node.js para o funcionamento do backend, prisma como nosso ORM, MySQL como o nosso banco de dados,  e javaScript como a linguagem de programação.
 
-<h1>Dependências</h1>
+
+<h1>Dependências necessárias</h1>
 
 Para o backend as dependências utilizadas foram, @prisma/client, axios, cors, express, morgan, multer, debug, e cookie-parser.
 
@@ -43,23 +53,11 @@ Segue abaixo os codigos:
 <h1>Template de Administração Gratuito PurpleAdmin</h1>
 Purple Admin é um template gratuito e responsivo de administração construído com o Bootstrap 5. O template possui um design colorido, atrativo, mas ao mesmo tempo simples e elegante. Ele foi cuidadosamente desenvolvido, com todos os componentes organizados de forma ordenada e precisa.
 O Purple Admin está repleto de recursos que atendem às suas necessidades, sem ser sobrecarregado com componentes que você nem usaria. É uma excelente opção para criar painéis de administração, sistemas de comércio eletrônico, sistemas de gerenciamento de projetos, CMS ou CRM.
+=======
+### Autores
 
-Apesar de ter um design único, o template é facilmente personalizável para atender aos seus requisitos. O Purple Admin vem com um código limpo e bem comentado, facilitando o trabalho com o template, tornando-o uma escolha ideal para iniciar o seu projeto.
-
-<h1>Créditos:</h1>
-Bootstrap 5
-Ícones de Material Design
-jQuery
-Gulp
-Chart.js
-<h1>Suporte do Navegador:</h1>
-O Purple Admin foi projetado para funcionar perfeitamente com todos os navegadores web modernos e mais recentes.
-
-Chrome (mais recente)
-FireFox (mais recente)
-Safari (mais recente)
-Opera (mais recente)
-IE10+
-<h1>Informações de Licença:</h1>
-Purple Admin é lançado sob a licença MIT. Purple Admin é um template de administração gratuito desenvolvido a partir do BootstrapDash. Sinta-se à vontade para baixá-lo, usá-lo, compartilhá-lo e ser criativo com ele.
+ Arthur Cantuario Pereira
+ Clemerson dos Santos Coutinhoclemersonsantos2004@gmail.com
+ Luiz Filipi Soares de Sousa
+ Matheus Nascimento Cruz
 

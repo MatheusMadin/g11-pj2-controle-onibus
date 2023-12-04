@@ -15,11 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                const { motorista } = response.data;
-
-                alert("Motorista cadastrado com sucesso.");
-
-                // window.location.href = `/motoristas/exibir/${motorista.id}`;
+                window.location.href = `http://localhost:3001/admin/motorista/exibir/${response.data.id}`;
             } catch (error) {
                 console.error("danger", error.message);
             }

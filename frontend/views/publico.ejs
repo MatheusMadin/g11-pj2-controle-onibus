@@ -500,11 +500,10 @@
                             <div class="card mb-5">
                                 <div class="card-body p-sm-5">
                                     <h2 class="text-center mb-4">Recarregue seu cartão aqui</h2>
-                                    <form method="post">
-                                        <div class="mb-3"><input class="form-control" type="email" id="email-2" name="email " placeholder="Email"></div>
-                                        <div class="mb-3"><input class="form-control" type="password" placeholder="Senha"></div>
-                                        <div><button class="btn d-block w-100" type="button" style="border-color: black;">Enviar Solicitação</button></div>
-                                        <div class="d-xl-flex justify-content-xl-center mb-3"><a href="#" style="margin-top: 10px;">Se não tiver carteirinha ainda</a></div>
+                                    <form id="form">
+                                        <div class="mb-3"><input class="form-control" type="text" id="cpf" placeholder="Digite seu CPF"></div>
+                                        <div class="mb-3"><input class="form-control" type="text" id="valor" placeholder="Digite o Valor"></div>
+                                        <div><button class="btn d-block w-100" type="submit" style="border-color: black;">Enviar Solicitação</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -528,7 +527,7 @@
                     <div class="col-sm-6 col-md-3 col-xl-6 item" style="padding-bottom: 9px;border: 1px solid black ;">
                         <h3>Sobre nós</h3>
                         <ul class="justify-content-xl-start align-items-xl-end">
-                            <li class="text-start d-flex"><i class="material-icons">location_on</i><a href="#">&nbsp; rua José Herculano 1086&nbsp; &nbsp;Caraguatatuba</a></li>
+                            <li class="text-start d-flex"><i class="material-icons">location_on</i><a href="#">&nbsp; Rua José Herculano 1086&nbsp; &nbsp;Caraguatatuba</a></li>
                             <li class="d-flex"><i class="material-icons" style="font-size: 27px;">mail_outline</i><a href="#">&nbsp; suporte@LitoralTransporte.com.br</a></li>
                             <li class="d-flex"><i class="material-icons">phone</i><a href="#">&nbsp; +12 02101-2007</a></li>
                         </ul>
@@ -548,6 +547,8 @@
     </div>
     <script src="/publico/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/publico/assets/js/script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/publico/js/recarga.js"></script>
 </body>
 
 </html>

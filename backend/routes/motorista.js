@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const upload = require("../middlewares/fileUpload.js");
+const fs = require('fs');
 const { PrismaClient, Prisma } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -84,10 +85,15 @@ router.put("/editar/:id", upload.single("foto"), async (req, res) => {
 router.delete("/excluir/:id", async (req, res) => {
   try {
     const { id } = req.params;
+    const motorista = await prisma.motorista.findUnique({
+      where : { id: parseInt(id )}
+    });
+    
+    fs.unlinkSync(motorista.foto)
+  
     await prisma.motorista.delete({
       where: { id: parseInt(id) }
     });
-
     res.json({ mensagem: "Motorista deletado com sucesso." });
   } catch (error) {
     console.error(error);

@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         const inicio = linha.inicio.substring(11, 16);
         const fim = linha.fim.substring(11, 16);
 
-        document.querySelector("#id").value = linha.id;
         document.querySelector("#horarioInicio").value = inicio;
         document.querySelector("#horarioFim").value = fim;
         document.querySelector("#localInicio").value = linha.localinicio;

@@ -30,11 +30,6 @@
                                     <div class="card-body">
                                         <form class="forms-sample" id="form">
                                             <div class="form-group">
-                                                <label for="id">ID</label>
-                                                <input type="text" class="form-control" id="id" placeholder="Nome"
-                                                    required>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="nome">Nome Completo</label>
                                                 <input type="text" class="form-control" id="nome" placeholder="Nome"
                                                     required>
@@ -45,15 +40,15 @@
                                                     placeholder="000.000.000-00" required>
                                             </div>
                                             <div class="form-group">
+                                                <label for="codigocartao">Codigo do Cartão</label>
+                                                <input type="text" class="form-control" id="codigoCartao" required>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="saldo">Saldo</label>
                                                 <input type="text" class="form-control" id="saldo" required>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="codigocartao">codigo do cartão</label>
-                                                <input type="number" class="form-control" id="codigocartao" required disabled>
-                                            </div>
                                             <button type="submit" class="btn btn-primary me-2">Confirmar</button>
-                                            <button class="btn btn-light">Cancelar</button>
+                                            <a class="btn btn-danger me-2" href="/admin/passageiro/">Cancelar</a>
                                         </form>
                                     </div>
                                 </div>
