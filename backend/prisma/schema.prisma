@@ -45,6 +45,7 @@ model linha {
 model motorista {
   id     Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
   nome   String?  @db.VarChar(200)
+  cnh    String?  @unique(map: "cnh_UNIQUE") @db.VarChar(11)
   foto   String?  @db.VarChar(200)
   viagem viagem[]
 }
@@ -59,8 +60,9 @@ model usuario {
   id      Int       @id @unique(map: "idtable1_UNIQUE") @default(autoincrement())
   nome    String?   @db.VarChar(200)
   email   String?   @db.VarChar(200)
-  senha   String?   @db.VarChar(45)
+  senha   String?   @db.VarChar(200)
   token   String?   @db.VarChar(45)
+  foto    String?   @db.VarChar(200)
   cliente cliente[]
 }
 

@@ -18,25 +18,41 @@ Este projeto utiliza o bootstrap para estilizações das interfaces, node.js par
 
 <h1>Dependências necessárias</h1>
 
-<h3>Para Back-End</h3>
+Para o backend as dependências utilizadas foram, @prisma/client, axios, cors, express, morgan, multer, debug, e cookie-parser.
 
-As dependências utilizadas para Back-End foram: @prisma/client, axios, cors, express, morgan, multer, debug, e cookie-parser.
+E as devdependencies são o nodemon e prisma
 
-E as dependências de desenvolvimento para Back-End: nodemon e prisma.
+Segue abaixo os codigos:
 
-<h3>Para o Front-End</h3>
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.2",
+    "axios": "^1.5.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prisma": "^5.4.2"
+  }
+}
 
-As dependências utilizadas para o Front-End foram: bootstrap, cookie-parser, debug, ejs, express, http-errors e morgan.
+<h2>Em nossa interface administrativa, fizemos uso da Template de Administração PurpleAdmin. Segue abaixo uma pequena parte da documentação do mesmo, para que seja possivel (se nescessario) um melhor entendimentlo sobre o template.</h2>
 
-E as dependências de desenvolvimento para o Front-End, foi somente o nodemon.
-
-<h2>Interfaces</h2>
-
-Em nossa interface administrativa, fizemos uso da Template de Administração PurpleAdmin.
-
-Já a interface publica, foi contruida com bootstrap.
-
-E as interfaces de catraca foram feitas com html e css.
+<h1>Template de Administração Gratuito PurpleAdmin</h1>
+Purple Admin é um template gratuito e responsivo de administração construído com o Bootstrap 5. O template possui um design colorido, atrativo, mas ao mesmo tempo simples e elegante. Ele foi cuidadosamente desenvolvido, com todos os componentes organizados de forma ordenada e precisa.
+O Purple Admin está repleto de recursos que atendem às suas necessidades, sem ser sobrecarregado com componentes que você nem usaria. É uma excelente opção para criar painéis de administração, sistemas de comércio eletrônico, sistemas de gerenciamento de projetos, CMS ou CRM.
 
 <h2>Como rodar aplicação</h2>
 
@@ -58,8 +74,8 @@ E tambem no navegador, mas em uma nova guia se preferir, escreva http://localhos
 
  <h1>Desenvolvedores do projeto</h1>
 
- Arthur Cantuario Pereira <hr>
- Clemerson dos Santos <hr>
- Luiz Filipi Soares de Sousa <hr>
+ Arthur Cantuario Pereira
+ Clemerson dos Santos 
+ Luiz Filipi Soares de Sousa
  Matheus Nascimento Cruz
 

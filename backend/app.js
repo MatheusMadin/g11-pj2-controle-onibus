@@ -8,6 +8,7 @@ const linhaRouter = require('./routes/linha');
 const onibusRouter = require('./routes/onibus');
 const passageiroRouter = require('./routes/passageiro');
 const motoristaRouter = require('./routes/motorista');
+const usuarioRouter = require('./routes/usuario')
 const catracaRouter = require('./routes/catraca');
 
 const app = express();
@@ -28,6 +29,7 @@ app.use('/api/linha', linhaRouter);
 app.use('/api/onibus', onibusRouter);
 app.use('/api/passageiro', passageiroRouter);
 app.use('/api/motorista', motoristaRouter);
-app.use('/api/onibus', catracaRouter);
+app.use('/api/catraca', catracaRouter);
+app.use('/api/usuario', usuarioRouter);
 
 module.exports = app;

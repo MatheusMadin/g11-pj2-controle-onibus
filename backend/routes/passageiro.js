@@ -51,12 +51,12 @@ router.get("/buscar/:id", async function (req, res, next) {
 router.post("/cadastrar", async (req, res, next) => {
     try {
         const { nome, cpf, saldo, codigocartao } = req.body;
-
+        const saldoFormatado = saldo.split(".").join("").split(",").join(".")
         const novoPassageiro = await prisma.cliente.create({
             data: {
                 nome,
                 cpf,
-                saldo,
+                saldo: saldoFormatado,
                 codigocartao,
                 usuario_id: 1
             },
@@ -73,14 +73,14 @@ router.put('/editar/:id', async function (req, res, next) {
     try {
         const id = parseInt(req.params.id);
         const { nome, cpf, saldo, codigocartao } = req.body;
-
+        const saldoFormatado = saldo.split(".").join("").split(",").join(".")
         const passageiroAtualizado = await prisma.cliente.update({
             where: {
                 id: id,
             },
             data: {
                 nome,
-                saldo,
+                saldo:saldoFormatado,
                 cpf,
                 codigocartao
             },
@@ -117,6 +117,7 @@ router.put('/recarga', async function (req, res, next) {
     try {
 
         const { cpf, valor } = req.body;
+        const valorFormatado = valor.split(".").join("").split(",").join(".")
         const passageiro = await prisma.cliente.findFirst({
             where: {
                 cpf: cpf
@@ -128,7 +129,7 @@ router.put('/recarga', async function (req, res, next) {
                 id: passageiro.id
             },
             data: {
-                saldo: parseFloat(passageiro.saldo) + parseFloat(valor),
+                saldo: parseFloat(passageiro.saldo) + parseFloat(valorFormatado),
             }
         })
         

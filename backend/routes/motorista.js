@@ -35,7 +35,7 @@ router.get("/buscar/:id", async function (req, res, next) {
         id: motoristaId,
       },
     });
-
+    console.log(motorista);
     if (motorista) {
       res.json(motorista);
     } else {
@@ -50,15 +50,16 @@ router.get("/buscar/:id", async function (req, res, next) {
 router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   try {
     const nome = req.body.nome;
+    const cnh = req.body.cnh;
     const foto = req.file?.path;
 
-    const data = { nome, foto };
+    const data = { nome, cnh, foto };
     const motorista = await prisma.motorista.create({ data });
 
     res.json(motorista);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Erro ao criar onibus." });
+    res.status(500).json({ error: "Erro ao criar motorista." });
   }
 });
 
@@ -66,9 +67,10 @@ router.put("/editar/:id", upload.single("foto"), async (req, res) => {
   try {
     const { id } = req.params;
     const nome = req.body.nome || null;
+    const cnh = req.body.cnh || null;
     const foto = req.file?.path;
 
-    const data = { nome, foto };
+    const data = { nome, cnh, foto };
 
     const motorista = await prisma.motorista.update({
       where: { id: parseInt(id) },

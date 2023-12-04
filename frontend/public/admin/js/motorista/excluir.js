@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const motorista = response.data;
 
     document.querySelector("#nome").value = motorista.nome;
+    document.querySelector("#cnh").value = motorista.cnh;
     const foto = document.getElementById("foto");
     foto.src = `http://localhost:3000/${motorista.foto}`
   } catch (error) {

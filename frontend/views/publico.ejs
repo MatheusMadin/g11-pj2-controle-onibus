@@ -501,8 +501,8 @@
                                 <div class="card-body p-sm-5">
                                     <h2 class="text-center mb-4">Recarregue seu cartão aqui</h2>
                                     <form id="form">
-                                        <div class="mb-3"><input class="form-control" type="text" id="cpf" placeholder="Digite seu CPF"></div>
-                                        <div class="mb-3"><input class="form-control" type="text" id="valor" placeholder="Digite o Valor"></div>
+                                        <div class="mb-3"><input class="form-control" type="text" id="cpf" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" maxlength="14" placeholder="123.456.789-10"></div>
+                                        <div class="mb-3"><input class="form-control" type="text" id="saldo" placeholder="Digite o Valor"></div>
                                         <div><button class="btn d-block w-100" type="submit" style="border-color: black;">Enviar Solicitação</button></div>
                                     </form>
                                 </div>
@@ -549,6 +549,8 @@
     <script src="/publico/assets/js/script.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/publico/js/recarga.js"></script>
+    <script src="/admin/js/formatarCPF.js"></script>
+    <script src="/admin/js/formatarSaldo.js"></script>
 </body>
 
 </html>

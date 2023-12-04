@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
   
       document.querySelector("#id").textContent = motorista.id;
       document.querySelector("#nome").textContent = motorista.nome;
+      document.querySelector("#cnh").textContent = motorista.cnh;
       const foto = document.getElementById("foto");
       foto.src = `http://localhost:3000/${motorista.foto}`  
       const crudButtons = document.getElementById('crudButtons');

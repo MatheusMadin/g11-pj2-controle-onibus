@@ -31,21 +31,22 @@
                                         <form class="forms-sample" id="form">
                                             <div class="form-group">
                                                 <label for="nome">Nome Completo</label>
-                                                <input type="text" class="form-control" id="nome" placeholder="Nome"
+                                                <input type="text" class="form-control" id="nome" placeholder="Digite o Nome Completo"
                                                     required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="cpf">CPF</label>
                                                 <input type="text" class="form-control" id="cpf"
+                                                    pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" maxlength="14"
                                                     placeholder="000.000.000-00" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="codigocartao">Codigo do Cartão</label>
-                                                <input type="text" class="form-control" id="codigoCartao" required>
+                                                <input type="text" class="form-control" id="codigoCartao"  placeholder= "Digite o Nº da Carterinha"required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="saldo">Saldo</label>
-                                                <input type="text" class="form-control" id="saldo" required>
+                                                <input type="text" class="form-control" id="saldo" placeholder="Digite o Saldo" required>
                                             </div>
                                             <button type="submit" class="btn btn-primary me-2">Confirmar</button>
                                             <a class="btn btn-danger me-2" href="/admin/passageiro/">Cancelar</a>
@@ -77,6 +78,8 @@
     <!-- Custom js for this page -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/admin/js/passageiro/editar.js"></script>
+    <script src="/admin/js/formatarCPF.js"></script>
+    <script src="/admin/js/formatarSaldo.js"></script>
     <!-- End custom js for this page -->
 </body>
 
