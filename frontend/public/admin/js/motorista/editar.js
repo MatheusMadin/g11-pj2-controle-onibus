@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const form = document.querySelector('#form');
       const nomeInput = document.querySelector('#nome');
+      const cnhInput = document.querySelector('#cnh');
       
       nomeInput.value = motorista.nome;
+      cnhInput.value = motorista.cnh;
 
       form.addEventListener('submit', async (event) => {
         event.preventDefault();

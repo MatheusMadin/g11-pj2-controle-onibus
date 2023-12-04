@@ -5,6 +5,14 @@ router.get("/", function (req, res, next) {
   res.render("admin/index");
 });
 
+// --- LOGIN e REGISTRO
+router.get("/login", function (req, res, next) {
+  res.render("admin/login");
+});
+router.get("/register", function (req, res, next) {
+  res.render("admin/register");
+});
+
 //---COMEÇO DE LINHAS---
 router.get("/linha", function (req, res, next) {
   res.render("admin/linha/index");

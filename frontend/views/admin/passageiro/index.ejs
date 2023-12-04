@@ -98,6 +98,14 @@
         { "data": "saldo" },
         { "data": null, "defaultContent": "" },
       ],
+      "columnDefs": [
+        {
+          "targets": 4, // Coluna que contém a URL da imagem
+          "render": function (data, type, row) {
+            return `R$${parseFloat(data).toLocaleString('pt-BR')}`;
+          }
+        }
+      ],
       "createdRow": function (row, data, dataIndex) {
         // Adiciona os botões à terceira coluna
         const linkContainer = document.createElement("div");

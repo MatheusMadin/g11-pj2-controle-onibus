@@ -39,10 +39,11 @@
                         <table class="table table-hover" id="table">
                           <thead>
                             <tr>
-                              <th> ID</th>
+                              <th> ID </th>
                               <th> Foto </th>
                               <th> Nome </th>
-                              <th data-priority="1">Config</th>
+                              <th> CNH </th>
+                              <th data-priority="1"> Config </th>
                             </tr>
                           </thead>
                           <tbody>
@@ -92,6 +93,7 @@
         { "data": "id" },
         { "data": "foto" },
         { "data": "nome" },
+        { "data": "cnh" },
         { "data": null, "defaultContent": "" },
       ],
       "columnDefs": [
@@ -127,7 +129,7 @@
         linkContainer.appendChild(editLink);
         linkContainer.appendChild(deleteLink);
 
-        $(row).find("td:eq(3)").html(linkContainer);
+        $(row).find("td:eq(4)").html(linkContainer);
       }
     });
   </script>
