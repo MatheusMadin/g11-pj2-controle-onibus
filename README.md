@@ -53,8 +53,8 @@ Segue abaixo os codigos:
 <h1>Template de Administração Gratuito PurpleAdmin</h1>
 Purple Admin é um template gratuito e responsivo de administração construído com o Bootstrap 5. O template possui um design colorido, atrativo, mas ao mesmo tempo simples e elegante. Ele foi cuidadosamente desenvolvido, com todos os componentes organizados de forma ordenada e precisa.
 O Purple Admin está repleto de recursos que atendem às suas necessidades, sem ser sobrecarregado com componentes que você nem usaria. É uma excelente opção para criar painéis de administração, sistemas de comércio eletrônico, sistemas de gerenciamento de projetos, CMS ou CRM.
-=======
-### Autores
+
+ <h1>Desenvolvedores do projeto</h1>
 
  Arthur Cantuario Pereira
  Clemerson dos Santos 
