@@ -1,69 +1,65 @@
-<a href="http://www.bootstrapdash.com/demo/purple-admin-free" target="_blank"><img src="screenshot.jpg"></a>
+<h1>Oque é este projeto?</h1>
 
-<h1>PurpleAdmin-Free-Admin-Template</h1>
-Purple Admin is a free responsive admin template built with Bootstrap 5. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
+Este projeto carrega consigo, uma interface publica de um site para uma empresa de transportes publicos, uma interface administrativa da empresa, e um script de controle de catraca.
 
-Purple Admin is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems,  project management systems, CMS or CRM.
+<h1>Tecnologias utilizadas</h1>
 
-Although the template has a design like none other, it is easily customizable to suit your requirements. Purple Admin comes with a clean and well-commented code that makes it easy to work with the template. Thus making it an ideal pick for jump starting your project.
+Este projeto utiliza o bootstrap para estilizações das interfaces, node.js para o funcionamento do backend, prisma como nosso ORM.
 
+<h1>Dependências</h1>
 
-<h1>Credits:</h1>
+Para o backend as dependências utilizadas foram, @prisma/client, axios, cors, express, morgan, multer, debug, e cookie-parser.
 
-- Bootstrap 5
-- Material Design Icons
-- jQuery
-- Gulp
-- Chart.js
+E as devdependencies são o nodemon e prisma
 
-<h1>Browser Support:</h1>
+Segue abaixo os codigos:
 
-Purple Admin is designed to work flawlessly with all the latest and modern web browsers.
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.2",
+    "axios": "^1.5.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prisma": "^5.4.2"
+  }
+}
 
-- Chrome (latest)
-- FireFox (latest)
-- Safari (latest)
-- Opera (latest)
-- IE10+  
+<h2>Em nossa interface administrativa, fizemos uso da Template de Administração PurpleAdmin. Segue abaixo uma pequena parte da documentação do mesmo, para que seja possivel (se nescessario) um melhor entendimentlo sobre o template.</h2>
 
-<h1>License Information:</h1>
+<h1>Template de Administração Gratuito PurpleAdmin</h1>
+Purple Admin é um template gratuito e responsivo de administração construído com o Bootstrap 5. O template possui um design colorido, atrativo, mas ao mesmo tempo simples e elegante. Ele foi cuidadosamente desenvolvido, com todos os componentes organizados de forma ordenada e precisa.
+O Purple Admin está repleto de recursos que atendem às suas necessidades, sem ser sobrecarregado com componentes que você nem usaria. É uma excelente opção para criar painéis de administração, sistemas de comércio eletrônico, sistemas de gerenciamento de projetos, CMS ou CRM.
 
+Apesar de ter um design único, o template é facilmente personalizável para atender aos seus requisitos. O Purple Admin vem com um código limpo e bem comentado, facilitando o trabalho com o template, tornando-o uma escolha ideal para iniciar o seu projeto.
 
-Purple Admin is released under MIT license. Purple Admin is a free Bootstrap 5 admin template developed from BootstrapDash. Feel free to download it, use it, share it, get creative with it.
+<h1>Créditos:</h1>
+Bootstrap 5
+Ícones de Material Design
+jQuery
+Gulp
+Chart.js
+<h1>Suporte do Navegador:</h1>
+O Purple Admin foi projetado para funcionar perfeitamente com todos os navegadores web modernos e mais recentes.
 
-<h1>How to use Purple Admin?</h1>
+Chrome (mais recente)
+FireFox (mais recente)
+Safari (mais recente)
+Opera (mais recente)
+IE10+
+<h1>Informações de Licença:</h1>
+Purple Admin é lançado sob a licença MIT. Purple Admin é um template de administração gratuito desenvolvido a partir do BootstrapDash. Sinta-se à vontade para baixá-lo, usá-lo, compartilhá-lo e ser criativo com ele.
 
-
-1 - Click the Clone or Download button in GitHub and download as a ZIP file or you can enter the command git clone https://github.com/BootstrapDash/PurpleAdmin-Free-Admin-Template.git in you terminal to get a copy of this template.
-
-2 - After the files have been downloaded you will get a folder with all the required files
-
-3 - You can install all the dependencies in the template by running the command npm install. All the required files are in the node modules.
-
-4 - Find the file named index.html, check what all components you need. Open the file in a text editor and you can start editing.
-
-5 - Now that your project has now kick-started, all you need to do now is to code, code, and code to your heart's content.
-
-<h1>How to Contribute?:</h1>
-
-
-We love your contributions and we welcome them wholeheartedly. We believe the more the merrier.
-To contribute make sure you have a Node.js and npm installed. Now run the command gulp --version. If the command returns with the Gulp version number, it means you have Gulp installed. If not you need to run the command npm install --global gulp-cli to install Gulp.
-
-<h2>Next</h2>
-
-After Gulp has been installed, follow the steps below to contribute.
-  <br>
-	1 - Fork and clone the repo of Purple Admin.
-  <br>
-	2 - Run the command npm install to install all the dependencies.
-  <br>
-	3 - Enter the command gulp serve. This will open Purple Admin in your default browser.
-  <br>
-	4 - Make your valuable contribution
-  <br>
-	5 - Submit a pull request.
-  <hr>
-	Do you need a template with more features and functionalities? Get more with our collection of the premium template with more plugins, eye catching animations, UI components, and sample pages all fitting together with a high-quality design.
-Visit
-  <a href="https://www.bootstrapdash.com" target="_blank">https://www.bootstrapdash.com</a> for more admin templates.
