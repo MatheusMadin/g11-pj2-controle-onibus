@@ -22,8 +22,6 @@ Para o backend as dependências utilizadas foram, @prisma/client, axios, cors, e
 
 E as devdependencies são o nodemon e prisma
 
-<h2>Em nossa interface administrativa, fizemos uso da Template de Administração PurpleAdmin.
-
 <h2>Como rodar aplicação</h2>
 
 Primeiro verifique se você possui um "aplicativo de programação" instalada na sua maquina, e as tecnologias sitadas anteriormente.
@@ -44,8 +42,8 @@ E tambem no navegador, mas em uma nova guia se preferir, escreva http://localhos
 
  <h1>Desenvolvedores do projeto</h1>
 
- Arthur Cantuario Pereira
- Clemerson dos Santos 
- Luiz Filipi Soares de Sousa
- Matheus Nascimento Cruz
+ Arthur Cantuario Pereira<hr>
+ Clemerson dos Santos <hr>
+ Luiz Filipi Soares de Sousa<hr>
+ Matheus Nascimento Cruz<hr>
 
