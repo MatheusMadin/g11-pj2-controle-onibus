@@ -57,7 +57,7 @@ O Purple Admin está repleto de recursos que atendem às suas necessidades, sem 
 ### Autores
 
  Arthur Cantuario Pereira
- Clemerson dos Santos Coutinhoclemersonsantos2004@gmail.com
+ Clemerson dos Santos 
  Luiz Filipi Soares de Sousa
  Matheus Nascimento Cruz
 
