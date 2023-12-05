@@ -21,7 +21,6 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/count", async function (req, res, next) {
-    console.log(req.usuario)
     const passageiro = await prisma.cliente.count()
     res.json(passageiro);
 });

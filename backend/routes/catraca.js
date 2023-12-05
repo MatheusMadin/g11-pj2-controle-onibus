@@ -4,26 +4,9 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-router.post('/validar', async function (req, res, next) {
-  try {
-    const codigocartao = req.body.codigocartao
-    const passageiro = await prisma.cliente.findFirst({
-      where: { codigocartao: codigocartao }
-    })
-    if (!passageiro) {
-      return res.status(404).json({ error: 'Passageiro não Encontrado' })
-    }
-    res.json(passageiro)
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Erro interno.' });
-  }
-})
-
 router.post('/embarque', async function (req, res, next) {
   try {
     const codigocartao = req.body.codigocartao
-    const viagemId = req.body.viagemId
     const valorDaPassagem = 5
     // Verifica se passageiro existe
     const passageiro = await prisma.cliente.findFirst({
@@ -35,9 +18,8 @@ router.post('/embarque', async function (req, res, next) {
 
     // Verifica o Saldo
     if (passageiro.saldo < valorDaPassagem && passageiro.id !== 0) {
-      res.status(402).json({ msg: "Seu pobre" })
+      res.status(402).json({ msg: "Saldo Insuficiente" })
     }
-
     // Cobra o Passageiro
     if (passageiro.id !== 0) {
       await prisma.cliente.update({
@@ -45,18 +27,20 @@ router.post('/embarque', async function (req, res, next) {
         data: { saldo: passageiro.saldo - valorDaPassagem, },
       })
     }
-    console.log(new Date().toString())
+    const cliente_id = passageiro.id
+    console.log(cliente_id);
     const embarque = await prisma.cliente_has_viagem.create({
       data: {
-        cliente_id: passageiro.id,
-        viagem_id: viagemId,
+        cliente_id,
+        viagem_id: 1,
+        data: new Date().toDateString(),
         tarifa: valorDaPassagem,
-        data: new Date().toString(),
-      },
-    })
+      }
+    });
     res.json(embarque)
   } catch (error) {
-
+    console.error(error);
+    res.status(500).json({ error: "Erro ao criar passageiro." });
   }
 })
 module.exports = router;

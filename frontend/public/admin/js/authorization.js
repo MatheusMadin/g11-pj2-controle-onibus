@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
+async function auth () {
     try {
         const res = await verifyToken();
         localStorage.setItem("usuario", res)
@@ -7,22 +7,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Erro ao verificar o token:", error);
         window.location.replace("/admin/login");
     }
-});
-
-document.getElementById('singout').addEventListener('click', function(event) {
-    // Prevenir o comportamento padrão do link (não navegar para outra página)
-    event.preventDefault();
-
-    // Apagar o localStorage
-    localStorage.clear();
-
-    // Mensagem para indicar que o localStorage foi apagado (opcional)
-    window.location.href = `http://localhost:3001/admin/login`
-});
-
+}
+auth()
 async function verifyToken() {
     const token = localStorage.getItem("token");
-
     if (!token) {
         throw new Error("Token não encontrado");
     }
@@ -37,3 +25,15 @@ async function verifyToken() {
     }
     return response.data
 }
+
+// SingOut
+document.getElementById('singout').addEventListener('click', function(event) {
+    // Prevenir o comportamento padrão do link (não navegar para outra página)
+    event.preventDefault();
+
+    // Apagar o localStorage
+    localStorage.clear();
+
+    // Mensagem para indicar que o localStorage foi apagado (opcional)
+    window.location.href = `http://localhost:3001/admin/login`
+});
