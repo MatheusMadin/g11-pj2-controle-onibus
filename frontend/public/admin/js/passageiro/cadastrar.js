@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = { nome, cpf, saldo, codigocartao };
 
       try {
-        const response = await axios.post("http://localhost:3000/api/passageiro/cadastrar", data);
+        const response = await axios.post("http://localhost:3000/api/passageiro/cadastrar", data,{
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        });
 
         console.log("success", "Cadastro realizado sucesso");
 

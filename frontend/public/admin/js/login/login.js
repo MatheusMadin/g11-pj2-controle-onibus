@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const response = await axios.post('http://localhost:3000/api/usuario/login', data);
                 const token = response.data.token;
                 localStorage.setItem("token", token)
+                localStorage.setItem("usuario", response.data.usuario.id)
+                window.location.href = `http://localhost:3001/admin/`
             } catch (error) {
                 console.error("danger", error.message);
             }

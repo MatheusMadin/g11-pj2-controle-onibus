@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const upload = require("../middlewares/fileUpload.js");
+const auth = require("../middlewares/authorization.js");
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
 const fs = require('fs');
@@ -34,7 +35,7 @@ router.get("/buscar/:id", async function (req, res, next) {
     });
 
     if (usuario) {
-      res.json(usuario);
+      res.json({usuario});
     } else {
       res.status(404).json({ error: 'Usuario não encontrado' });
     }
@@ -115,20 +116,24 @@ router.post("/login", async (req, res, next) => {
     if (!usuario) {
       return res.status(401).json({ success: false, msg: 'Credenciais inválidasa.' })
     }
-    console.log(senha)
-    
+   
     const validaSenha = await bcrypt.compare(senha, usuario.senha)
     if (!validaSenha) {
       return res.status(401).json({ success: false, msg: 'Credenciais inválidas.' })
     }
 
     const token = jwt.sign({ id: usuario.id }, process.env.SECRET, { expiresIn: '8h' });
-    return res.json({ token });
+    return res.json({ token, usuario });
 
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Erro ao logar no usuario." });
   }
+});
+
+router.get("/token", auth, async (req, res) => {
+  const userId = req.usuario.id
+  res.json(userId)
 });
 
 module.exports = router;

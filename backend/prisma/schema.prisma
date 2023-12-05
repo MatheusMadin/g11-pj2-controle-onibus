@@ -21,7 +21,7 @@ model cliente {
 }
 
 model cliente_has_viagem {
-  id         Int      @id
+  id         Int      @id @default(autoincrement())
   viagem_id  Int
   tarifa     Decimal? @db.Decimal(8, 2)
   data       String?  @db.VarChar(45)

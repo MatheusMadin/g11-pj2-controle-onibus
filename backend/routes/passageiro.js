@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const auth = require("../middlewares/authorization.js");
 const { PrismaClient, Prisma } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -20,6 +21,7 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/count", async function (req, res, next) {
+    console.log(req.usuario)
     const passageiro = await prisma.cliente.count()
     res.json(passageiro);
 });
@@ -38,7 +40,7 @@ router.get("/buscar/:id", async function (req, res, next) {
             }
         })
         if (passageiro) {
-            res.json({passageiro, usuario});
+            res.json({ passageiro, usuario });
         } else {
             res.status(404).json({ error: 'Passageiro não encontrada' });
         }
@@ -48,9 +50,10 @@ router.get("/buscar/:id", async function (req, res, next) {
     }
 });
 
-router.post("/cadastrar", async (req, res, next) => {
+router.post("/cadastrar", auth, async (req, res, next) => {
     try {
         const { nome, cpf, saldo, codigocartao } = req.body;
+
         const saldoFormatado = saldo.split(".").join("").split(",").join(".")
         const novoPassageiro = await prisma.cliente.create({
             data: {
@@ -58,7 +61,7 @@ router.post("/cadastrar", async (req, res, next) => {
                 cpf,
                 saldo: saldoFormatado,
                 codigocartao,
-                usuario_id: 1
+                usuario_id: req.usuario.id
             },
         });
 
@@ -80,12 +83,12 @@ router.put('/editar/:id', async function (req, res, next) {
             },
             data: {
                 nome,
-                saldo:saldoFormatado,
+                saldo: saldoFormatado,
                 cpf,
                 codigocartao
             },
         });
-       
+
         res.json(passageiroAtualizado);
     } catch (error) {
         console.error(error);
@@ -113,6 +116,7 @@ router.delete("/excluir/:id", async function (req, res, next) {
     }
 });
 
+// --- Recarga
 router.put('/recarga', async function (req, res, next) {
     try {
 
@@ -132,11 +136,12 @@ router.put('/recarga', async function (req, res, next) {
                 saldo: parseFloat(passageiro.saldo) + parseFloat(valorFormatado),
             }
         })
-        
+
         res.json(passageiroRecarga);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Erro ao atualizar a passageiro.' });
     }
 });
+
 module.exports = router;
