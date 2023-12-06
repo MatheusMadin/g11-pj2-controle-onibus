@@ -14,12 +14,12 @@ router.post('/embarque', async function (req, res, next) {
         where: { codigocartao: codigocartao }
       })
       if (!passageiro) {
-        return res.status(404).json({ msg: "PASSAGEIRO NÃO ENCONTRADO" })
+         throw new Error("PASSAGEIRO NÃO ENCONTRADO")
       }
 
       // Verifica o Saldo
       if (passageiro.saldo < valorDaPassagem && passageiro.id !== 0) {
-        return res.status(402).json({ msg: "SALDO INSUFICIENTE" })
+        throw new Error("SALDO INSUFICIENTE")
       }
       // Cobra o Passageiro
       if (passageiro.id !== 0) {
@@ -43,7 +43,13 @@ router.post('/embarque', async function (req, res, next) {
     res.json(novoEmbarque)
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "ERRO INTERNO." });
+    if (error.message === 'PASSAGEIRO NÃO ENCONTRADO') {
+      res.status(404).json({ error: 'PASSAGEIRO NÃO ENCONTRADO' });
+    } else if (error.message === 'SALDO INSUFICIENTE') {
+      res.status(402).json({ error: 'SALDO INSUFICIENTE' }); // 402 Payment Required
+    } else {
+      res.status(500).json({ error: 'Erro interno do servidor' });
+    }
   }
 })
 

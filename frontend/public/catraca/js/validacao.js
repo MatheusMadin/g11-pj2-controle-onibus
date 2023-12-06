@@ -12,7 +12,7 @@ form.addEventListener('submit', async (event) => {
       const id = response.data.cliente_id
       window.location.href = `http://localhost:3001/catraca/confirma/${id}`
     } catch (error) {
-      localStorage.setItem("erro", error.response.data.msg)
+      localStorage.setItem("erro", error.response.data.error)
       window.location.href = `http://localhost:3001/catraca/negado`
     }
   }
