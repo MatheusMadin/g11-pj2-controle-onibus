@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
   try {
     const response = await axios.get(`http://localhost:3000/api/passageiro/buscar/${urlId}`);
-    const passageiro = response.data.passageiro;
-    const usuario = response.data.usuario;
-    console.log(response.data)
+    const passageiro = response.data;
+    const res = await axios.get(`http://localhost:3000/api/usuario/buscar/${passageiro.usuario_id}`);
+    const usuario = res.data;
+    console.log(usuario)
     document.querySelector("#id").textContent = passageiro.id;
     document.querySelector("#nome").textContent = passageiro.nome;
     document.querySelector("#cpf").textContent = passageiro.cpf;

@@ -16,6 +16,5 @@ function atualizarRelogio() {
       ${horas}:${minutos}
     `;
 }
-
 atualizarRelogio();
 setInterval(atualizarRelogio, 1000); // Atualiza a cada 1 segundo

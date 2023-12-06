@@ -33,13 +33,8 @@ router.get("/buscar/:id", async function (req, res, next) {
                 id: passageiroId,
             },
         });
-        const usuario = await prisma.usuario.findUnique({
-            where: {
-                id: passageiro.usuario_id
-            }
-        })
         if (passageiro) {
-            res.json({ passageiro, usuario });
+            res.json(passageiro);
         } else {
             res.status(404).json({ error: 'Passageiro não encontrada' });
         }

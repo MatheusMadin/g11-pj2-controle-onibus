@@ -1,8 +1,6 @@
 async function auth () {
     try {
-        const res = await verifyToken();
-        localStorage.setItem("usuario", res)
-        console.log("Está autorizado a ver esta página");
+        await verifyToken();
     } catch (error) {
         console.error("Erro ao verificar o token:", error);
         window.location.replace("/admin/login");

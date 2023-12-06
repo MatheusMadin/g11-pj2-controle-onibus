@@ -5,7 +5,7 @@ router.get("/", function (req, res, next) {
   res.render("catraca/index");
 });
 
-router.get("/confirma", function (req, res, next) {
+router.get("/confirma/:id", function (req, res, next) {
   res.render("catraca/confirma");
 });
 

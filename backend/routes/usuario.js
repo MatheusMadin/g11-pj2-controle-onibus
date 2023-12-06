@@ -33,9 +33,8 @@ router.get("/buscar/:id", async function (req, res, next) {
         id: usuarioId,
       },
     });
-
     if (usuario) {
-      res.json({usuario});
+      res.json(usuario);
     } else {
       res.status(404).json({ error: 'Usuario não encontrado' });
     }
@@ -135,5 +134,11 @@ router.get("/token", auth, async (req, res) => {
   const userId = req.usuario.id
   res.json(userId)
 });
+
+router.post("/decode", async (req, res) => {
+  const token = req.body.token
+  const id = jwt.verify(token, process.env.SECRET).id
+  res.json(id)
+})
 
 module.exports = router;
