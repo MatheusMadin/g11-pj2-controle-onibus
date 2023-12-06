@@ -5,9 +5,9 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 router.post('/embarque', async function (req, res, next) {
+  const valorDaPassagem = 5
+  const codigocartao = req.body.codigocartao
   try {
-    const codigocartao = req.body.codigocartao
-    const valorDaPassagem = 5
     const novoEmbarque = await prisma.$transaction(async (prisma) => {
       // Verifica se passageiro existe
       const passageiro = await prisma.cliente.findFirst({
@@ -46,7 +46,10 @@ router.post('/embarque', async function (req, res, next) {
     if (error.message === 'PASSAGEIRO NÃO ENCONTRADO') {
       res.status(404).json({ error: 'PASSAGEIRO NÃO ENCONTRADO' });
     } else if (error.message === 'SALDO INSUFICIENTE') {
-      res.status(402).json({ error: 'SALDO INSUFICIENTE' }); // 402 Payment Required
+      const passageiro = await prisma.cliente.findFirst({
+        where: { codigocartao: codigocartao }
+      })
+      res.status(402).json({ error: 'SALDO INSUFICIENTE', tarifa: valorDaPassagem, id: passageiro.id }); // 402 Payment Required
     } else {
       res.status(500).json({ error: 'Erro interno do servidor' });
     }

@@ -3,7 +3,7 @@ async function confirma () {
     try {
         const passageiro = await axios.get(`http://localhost:3000/api/passageiro/buscar/${id}`)
         document.querySelector("#nome").innerHTML = (passageiro.data.nome).split(" ").shift().toUpperCase()
-        document.querySelector("#saldo").innerHTML = `DÉBITO: R$ ${parseFloat(passageiro.data.saldo).toLocaleString("pt-BR", {minimumFractionDigits: 2})}`
+        document.querySelector("#saldo").innerHTML = `SALDO: R$ ${parseFloat(passageiro.data.saldo).toLocaleString("pt-BR", {minimumFractionDigits: 2})}`
         document.querySelector("#tarifa").innerHTML = `TARIFA: R$ ${parseFloat(localStorage.getItem("tarifa")).toLocaleString("pt-BR", {minimumFractionDigits: 2})}`
     } catch (error) {
         console.error("danger", error.message);

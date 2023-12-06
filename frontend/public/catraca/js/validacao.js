@@ -13,6 +13,8 @@ form.addEventListener('submit', async (event) => {
       window.location.href = `http://localhost:3001/catraca/confirma/${id}`
     } catch (error) {
       localStorage.setItem("erro", error.response.data.error)
+      localStorage.setItem("tarifa", error.response.data.tarifa)
+      localStorage.setItem("id", error.response.data.id)
       window.location.href = `http://localhost:3001/catraca/negado`
     }
   }

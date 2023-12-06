@@ -34,6 +34,7 @@ router.get("/buscar/:id", async function (req, res, next) {
             },
         });
         if (passageiro) {
+            console.log(passageiro);
             res.json(passageiro);
         } else {
             res.status(404).json({ error: 'Passageiro não encontrada' });
