@@ -28,15 +28,19 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <form class="forms-sample" id="form">
+                    <form class="forms-sample needs-validation" novalidate id="form">
                       <div class="row">
                         <div class="form-group col-md-6">
                           <label for="horarioInicio">Horario Inicio</label>
                           <input type="time" class="form-control" id="horarioInicio" required>
+                          <div class="valid-feedback">Tudo Certo</div>
+                          <div class="invalid-feedback">Campo não preenchido</div>
                         </div>
                         <div class="form-group col-md-6">
                           <label for="horarioFim">Horario Fim</label>
                           <input type="time" class="form-control" id="horarioFim" required>
+                          <div class="valid-feedback">Tudo Certo</div>
+                          <div class="invalid-feedback">Campo não preenchido</div>
                         </div>
                       </div>
                       <div class="row">
@@ -44,10 +48,14 @@
                           <label for="localInicio">Local de Partida</label>
                           <input type="text" class="form-control" id="localInicio"
                             placeholder="Digiteo o local de inicio" required>
+                            <div class="valid-feedback">Tudo Certo</div>
+                          <div class="invalid-feedback">Campo não preenchido</div>
                         </div>
                         <div class="form-group col-md-6">
                           <label for="localFim">Destino</label>
-                          <input type="text" class="form-control" id="localFim" placeholder="Digite o local de termino">
+                          <input type="text" class="form-control" id="localFim" placeholder="Digite o local de termino" required>
+                          <div class="valid-feedback">Tudo Certo</div>
+                          <div class="invalid-feedback">Campo não preenchido</div>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary me-2">Confirmar</button>
