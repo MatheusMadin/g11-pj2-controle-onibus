@@ -2,9 +2,14 @@
 
 Catraca Eletrônica de Ônibus - Projeto Integrador IFSP
 
-Este é um projeto de catraca de ônibus desenvolvido no IFSP de Caraguatatuba, dividido em três interfaces:
+Este é um projeto que contem um script de catraca ônibus, um sistema administrativo, e um site publico, que tem como objetivo, atender as nescessidades de uma empresa do ramo de transportes publicos. Portanto este projeto foi dividido em três interfaces:
 
- Catraca: Nesta interface, ocorre a verificação da validade das carteirinhas dos passageiros antes de permitir a entrada no ônibus.
+ Catraca: Nesta interface, ocorre a verificação da validade das carteirinhas, se o saldo é suficiente, verifica o tipo do cartão dos passageiros antes de permitir a entrada no ônibus.
+
+ Por exemplo: Se o cartão é do tipo "IDOSO", nada será cobrado.
+              Se o cartão é do tipo "PCD" nada será cobrado.
+              Se o cartão é do tipo "ESTUDANTE", o valor do passe não será cobrado, porem só será possivel realizar duas passegens por dia.
+              Se o cartão é do tipo "COMUM", o valor do passe será cobrado.
 
  Página Online: Uma página pública da empresa onde quem possui a carteirinha pode recarregá-la online, de qualquer lugar, sem esforço, informações sobre linhas, horários, etc...
 
