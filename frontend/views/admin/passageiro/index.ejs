@@ -41,6 +41,7 @@
                               <th> ID</th>
                               <th> Nome </th>
                               <th> CPF </th>
+                              <th> Tipo </th>
                               <th> Carterinha </th>
                               <th> Saldo </th>
                               <th data-priority="1">Config</th>
@@ -94,13 +95,14 @@
         { "data": "id" },
         { "data": "nome" },
         { "data": "cpf" },
+        { "data": "tipo" },
         { "data": "codigocartao" },
         { "data": "saldo" },
         { "data": null, "defaultContent": "" },
       ],
       "columnDefs": [
         {
-          "targets": 4, // Coluna que contém a URL da imagem
+          "targets": 5, // Coluna que contém a URL da imagem
           "render": function (data, type, row) {
             return `R$${parseFloat(data).toLocaleString('pt-BR')}`;
           }
@@ -131,7 +133,7 @@
         linkContainer.appendChild(editLink);
         linkContainer.appendChild(deleteLink);
 
-        $(row).find("td:eq(5)").html(linkContainer);
+        $(row).find("td:eq(6)").html(linkContainer);
       }
     });
   </script>

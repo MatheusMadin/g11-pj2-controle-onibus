@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     document.querySelector("#nome").textContent = passageiro.nome;
     document.querySelector("#cpf").textContent = passageiro.cpf;
     document.querySelector("#saldo").textContent = passageiro.saldo;
+    document.querySelector("#tipo").textContent = passageiro.tipo;
     document.querySelector("#codigoCartao").textContent = passageiro.codigocartao;
     document.querySelector("#usuarioNome").textContent = usuario.nome;
 

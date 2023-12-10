@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     document.querySelector("#nome").value = passageiro.nome;
     document.querySelector("#cpf").value = passageiro.cpf;
     document.querySelector("#saldo").value = passageiro.saldo;
+    document.querySelector("#tipo").value = passageiro.tipo;
     document.querySelector("#codigoCartao").value = passageiro.codigocartao;
   } catch (error) {
     console.error("danger", error.message);
@@ -23,9 +24,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
       const nome = document.querySelector("#nome").value;
       const cpf = document.querySelector("#cpf").value;
       const saldo = document.querySelector("#saldo").value;
+      const tipo = document.querySelector("#tipo").value;
       const codigocartao = document.querySelector("#codigoCartao").value;
 
-      const data = { nome, saldo, cpf, codigocartao };
+      const data = { nome, saldo, cpf, tipo, codigocartao };
 
       try {
         const response = await axios.put(`http://localhost:3000/api/passageiro/editar/${urlId}`, data);

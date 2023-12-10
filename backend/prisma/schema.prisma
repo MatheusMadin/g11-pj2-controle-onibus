@@ -14,6 +14,7 @@ model cliente {
   cpf                String?              @db.VarChar(14)
   usuario_id         Int
   codigocartao       String?              @db.VarChar(45)
+  tipo               String?              @db.VarChar(45)
   usuario            usuario              @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_usuario")
   cliente_has_viagem cliente_has_viagem[]
 

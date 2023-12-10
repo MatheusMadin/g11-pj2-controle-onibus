@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     document.querySelector("#nome").value = passageiro.nome;
     document.querySelector("#cpf").value = passageiro.cpf;
     document.querySelector("#saldo").value = passageiro.saldo;
+    document.querySelector("#tipo").value = passageiro.tipo;
     document.querySelector("#codigoCartao").value = passageiro.codigocartao;
   } catch (error) {
     console.error("danger", error.message);
