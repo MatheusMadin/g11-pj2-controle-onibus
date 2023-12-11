@@ -14,4 +14,4 @@ confirma()
 setInterval(function() {
     localStorage.removeItem("tarifa")
     window.location.href = `http://localhost:3001/catraca`
-}, 5000); 
+}, 4000); 
