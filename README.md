@@ -34,15 +34,15 @@ Baixar os arquivos do repositorio do github: https://github.com/MatheusMadin/g11
 
 Você pode obter este arquivo por meio de download da pasta compactada via navegador, ou clonar os arquivos com o link do repositorio no seu editor (se o seu editor conter este tipo de serviço).
 
-Verifique se você tem o aplicativo <a href='https://www.apachefriends.org/pt_br/index.html'>xampp</a> instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
+Verifique se você tem o aplicativo <a target="_blank" href='https://www.apachefriends.org/pt_br/index.html'>xampp</a> instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
 
 Com os arquivos no seu editor, abra o terminal do editor (ctrl + '), clique no icone de uma seta para baixo, e clique em command prompt, Isto criara um novo terminal.<br> Neste novo terminal, execute o comando cd backend e aperte ENTER,<br> depois npm i e aperte ENTER,<br> depois npm run dev e aperte ENTER.
 
 Em seguida crie um novo terminal mas mantenha o anterior, porem, desta vez escreva cd frontend e aperte ENTER,<br> depois npm i e aperte ENTER,<br> depois npm run dev e aperte ENTER.
 
-Depois de concluir este passo a passo, abra o navegador e escreva <a href='http://127.0.0.1:3001/litoraltransporte'> (ou clique), para acessar o site publico.
+Depois de concluir este passo a passo, abra o navegador e escreva <a target="_blank" href='http://127.0.0.1:3001/litoraltransporte'>http://127.0.0.1:3001/litoraltransporte</a> (ou clique), para acessar o site publico.
 
-E tambem no navegador, mas em uma nova guia se preferir, escreva <a href='http://localhost:3001/admin/'> (ou clique), para acessar o site administrativo.
+E tambem no navegador, mas em uma nova guia se preferir, escreva <a target="_blank" href='http://localhost:3001/admin/'>http://localhost:3001/admin/</a> (ou clique), para acessar o site administrativo.
 
  <h1>Desenvolvedores do projeto</h1>
 
