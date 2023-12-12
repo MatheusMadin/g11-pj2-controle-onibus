@@ -6,12 +6,12 @@ Este é um projeto que contem um script de catraca ônibus, um sistema administr
 
  Catraca: Nesta interface, ocorre a verificação da validade das carteirinhas, se o saldo é suficiente, verifica o tipo do cartão dos passageiros antes de permitir a entrada no ônibus.
 
- Por exemplo: Se o cartão é do tipo "IDOSO", nada será cobrado.
-              Se o cartão é do tipo "PCD" nada será cobrado.
-              Se o cartão é do tipo "ESTUDANTE", o valor do passe não será cobrado, porem só será possivel realizar duas passegens por dia.
-              Se o cartão é do tipo "COMUM", o valor do passe será cobrado.
+ Por exemplo: Se o cartão é do tipo "IDOSO", nada será cobrado.<br>
+              Se o cartão é do tipo "PCD" nada será cobrado.<br>
+              Se o cartão é do tipo "ESTUDANTE", o valor do passe não será cobrado, porem só será possivel realizar duas passegens por dia.<br>
+              Se o cartão é do tipo "COMUM", o valor do passe será cobrado.<br>
 
- Página Online: Uma página pública da empresa onde quem possui a carteirinha pode recarregá-la online, de qualquer lugar, sem esforço, informações sobre linhas, horários, etc...
+ Página Online: Uma página pública da empresa onde quem possui a carteirinha da empresa, pode consultar o saldo da carteirinha e recarregá-la online, o site tambem contem, informações sobre linhas, horários, etc...
 
  Menu Administrativo: Uma página privada onde os usuários autorizados podem cadastrar e editar motoristas, linhas e passageiros.
 
@@ -19,7 +19,6 @@ Este é um projeto que contem um script de catraca ônibus, um sistema administr
 <h1>Tecnologias utilizadas</h1>
 
 Este projeto utiliza o bootstrap para estilizações das interfaces, node.js para o funcionamento do backend, prisma como nosso ORM, MySQL como o nosso banco de dados,  e javaScript como a linguagem de programação.
-
 
 <h1>Dependências necessárias</h1>
 
@@ -29,21 +28,21 @@ E as devdependencies são o nodemon e prisma
 
 <h2>Como rodar aplicação</h2>
 
-Primeiro verifique se você possui um "aplicativo de programação" instalada na sua maquina, e as tecnologias sitadas anteriormente.
+Primeiro verifique se você possui um "aplicativo de programação" instalada na sua maquina (recomendamos o visual estudio code), e as tecnologias sitadas anteriormente.
 
 Baixar os arquivos do repositorio do github: https://github.com/MatheusMadin/g11-pj2-controle-onibus.git
 
 Você pode obter este arquivo por meio de download da pasta compactada via navegador, ou clonar os arquivos com o link do repositorio no seu editor (se o seu editor conter este tipo de serviço).
 
-Verifique se você tem o aplicativo xampp instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
+Verifique se você tem o aplicativo <a href='https://www.apachefriends.org/pt_br/index.html' xampp> instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
 
-Com os arquivos no seu editor, abra o terminal do editor, clique no icone de uma seta para baixo, e clique em command prompt, Isto criara um novo terminal. Neste novo terminal, execute o comando cd backend e aperte ENTER, depois npm i e aperte ENTER, depois npm run dev e aperte ENTER.
+Com os arquivos no seu editor, abra o terminal do editor (ctrl + '), clique no icone de uma seta para baixo, e clique em command prompt, Isto criara um novo terminal.<br> Neste novo terminal, execute o comando cd backend e aperte ENTER,<br> depois npm i e aperte ENTER,<br> depois npm run dev e aperte ENTER.
 
-Em seguida crie novamente um novo terminal, porem, desta vez escreva cd frontend e aperte ENTER, depois npm i e aperte ENTER, depois npm run dev e aperte ENTER.
+Em seguida crie um novo terminal mas mantenha o anterior, porem, desta vez escreva cd frontend e aperte ENTER,<br> depois npm i e aperte ENTER,<br> depois npm run dev e aperte ENTER.
 
-Depois de concluir este passo a passo, abra o navegador e escreva http://127.0.0.1:3001/litoraltransporte (ou clique), para acessar o site publico.
+Depois de concluir este passo a passo, abra o navegador e escreva <a href='http://127.0.0.1:3001/litoraltransporte'> (ou clique), para acessar o site publico.
 
-E tambem no navegador, mas em uma nova guia se preferir, escreva http://localhost:3001/admin/ (ou clique), para acessar o site administrativo.
+E tambem no navegador, mas em uma nova guia se preferir, escreva <a href='http://localhost:3001/admin/'> (ou clique), para acessar o site administrativo.
 
  <h1>Desenvolvedores do projeto</h1>
 
