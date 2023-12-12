@@ -34,7 +34,7 @@ Baixar os arquivos do repositorio do github: https://github.com/MatheusMadin/g11
 
 Você pode obter este arquivo por meio de download da pasta compactada via navegador, ou clonar os arquivos com o link do repositorio no seu editor (se o seu editor conter este tipo de serviço).
 
-Verifique se você tem o aplicativo <a href='https://www.apachefriends.org/pt_br/index.html' xampp> instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
+Verifique se você tem o aplicativo <a href='https://www.apachefriends.org/pt_br/index.html'>xampp</a> instalado na sua maquina. Então abra o app e clique em start na opçâo do mysql.
 
 Com os arquivos no seu editor, abra o terminal do editor (ctrl + '), clique no icone de uma seta para baixo, e clique em command prompt, Isto criara um novo terminal.<br> Neste novo terminal, execute o comando cd backend e aperte ENTER,<br> depois npm i e aperte ENTER,<br> depois npm run dev e aperte ENTER.
 
