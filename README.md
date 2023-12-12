@@ -12,8 +12,8 @@ Este é um projeto que contem um script de catraca ônibus, um sistema administr
               Se o cartão é do tipo "COMUM", o valor do passe será cobrado.<br>
 
  Página Online: Uma página pública da empresa onde quem possui a carteirinha da empresa, pode consultar o saldo da carteirinha e recarregá-la online, o site tambem contem, informações sobre linhas, horários, etc...<br>
- 
-  <img src='![imagem_2023-12-12_090610052](https://github.com/MatheusMadin/g11-pj2-controle-onibus/assets/141776167/5f0c818c-c343-487e-8611-d1a1d21d8759)'>
+
+ ![imagem_2023-12-12_090610052](https://github.com/MatheusMadin/g11-pj2-controle-onibus/assets/141776167/5f0c818c-c343-487e-8611-d1a1d21d8759)
 
  Menu Administrativo: Uma página privada onde os usuários autorizados podem cadastrar e editar motoristas, linhas e passageiros.
 
