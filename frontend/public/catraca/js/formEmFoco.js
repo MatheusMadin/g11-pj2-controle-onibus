@@ -7,5 +7,6 @@ var inputCartao = document.getElementById('cartao');
     setInterval(function() {
         if (document.activeElement !== inputCartao) {
             inputCartao.focus();
+            window.scrollTo(0, 0)
         }
     }, 100); 
