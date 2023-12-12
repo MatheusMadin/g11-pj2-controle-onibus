@@ -15,4 +15,4 @@ setInterval(function() {
     localStorage.removeItem("tarifa")
     localStorage.removeItem("id")
     window.location.href = `http://localhost:3001/catraca`
-}, 5000); 
+}, 4000); 

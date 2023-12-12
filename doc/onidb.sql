@@ -24,11 +24,13 @@ CREATE TABLE IF NOT EXISTS `onidb`.`usuario` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL DEFAULT NULL,
   `email` VARCHAR(200) NULL DEFAULT NULL,
-  `senha` VARCHAR(45) NULL DEFAULT NULL,
+  `senha` VARCHAR(200) NULL DEFAULT NULL,
   `token` VARCHAR(45) NULL DEFAULT NULL,
+  `foto` VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idtable1_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -38,10 +40,11 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `onidb`.`cliente` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL DEFAULT NULL,
-  `saldo` DECIMAL(2,0) NULL DEFAULT NULL,
+  `saldo` DECIMAL(8,2) NULL DEFAULT NULL,
   `cpf` VARCHAR(14) NULL DEFAULT NULL,
   `usuario_id` INT(11) NOT NULL,
-  `codigocartao` VARCHAR(45) NULL,
+  `codigocartao` VARCHAR(45) NULL DEFAULT NULL,
+  `tipo` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_cliente_usuario_idx` (`usuario_id` ASC),
@@ -51,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `onidb`.`cliente` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -66,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `onidb`.`linha` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -76,9 +81,12 @@ CREATE TABLE IF NOT EXISTS `onidb`.`motorista` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL DEFAULT NULL,
   `foto` VARCHAR(200) NULL DEFAULT NULL,
+  `cnh` VARCHAR(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `cnh_UNIQUE` (`cnh` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -91,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `onidb`.`onibus` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -124,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `onidb`.`viagem` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -131,26 +141,26 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `onidb`.`cliente_has_viagem`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `onidb`.`cliente_has_viagem` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `viagem_id` INT(11) NOT NULL,
-  `tarifa` DECIMAL(2,0) NULL DEFAULT NULL,
+  `tarifa` DECIMAL(8,2) NULL DEFAULT NULL,
   `data` VARCHAR(45) NULL DEFAULT NULL,
   `cliente_id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
   INDEX `fk_cliente_has_viagem_viagem1_idx` (`viagem_id` ASC),
-  PRIMARY KEY (`id`, `viagem_id`, `cliente_id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_cliente_has_viagem_cliente1_idx` (`cliente_id` ASC),
-  CONSTRAINT `fk_cliente_has_viagem_viagem1`
-    FOREIGN KEY (`viagem_id`)
-    REFERENCES `onidb`.`viagem` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_cliente_has_viagem_cliente1`
     FOREIGN KEY (`cliente_id`)
     REFERENCES `onidb`.`cliente` (`id`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cliente_has_viagem_viagem1`
+    FOREIGN KEY (`viagem_id`)
+    REFERENCES `onidb`.`viagem` (`id`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
