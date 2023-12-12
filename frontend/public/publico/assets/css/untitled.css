@@ -1,0 +1,30 @@
+#corpo-do-site {
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  color: #fff !important;
+  border-color: #00e0ff !important;
+  box-shadow: 0px 0px;
+  background: #00e0ff !important;
+}
+
+.btn {
+  width: 100px;
+  height: auto;
+  color: black !important;
+  background: white !important;
+  border: 1px solid;
+}
+
+#BTN-tarifa:hover, #BTN-tarifa:active, #BTN-tarifa:focus {
+  background-color: #d0d0d0 !important;
+  color: #000000 !important;
+  border-color: #000000!important;
+}
+
+#btn-modal:focus, #btn-modal:active, #btn-modal:hover {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border-color: #ff0000!important;
+}
+

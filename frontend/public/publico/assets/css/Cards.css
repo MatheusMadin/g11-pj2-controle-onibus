@@ -1,0 +1,33 @@
+h1, h2, h3, h4 {
+  font-family: 'Urbanist', var(--bs-font-sans-serif);
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+#email-2:focus {
+  border: solid 1px #000000 !important;
+  box-shadow: none !important;
+}
+
+#bt3:disabled {
+  color: #000000;
+}
+
+@media (min-width: 300px) {
+  #bt3 {
+    font-size: 40px;
+  }
+}
+
+.modal-header {
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  color: #fff !important;
+  border-color: #ff0f00 !important;
+  box-shadow: 0px 0px;
+  background: #ff0f00 !important;
+}
+

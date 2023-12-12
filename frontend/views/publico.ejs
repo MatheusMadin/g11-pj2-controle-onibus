@@ -10,40 +10,120 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="/publico/assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="/publico/assets/fonts/material-icons.min.css">
-    <link rel="stylesheet" href="/publico/assets/css/styles.min.css">
+    <link rel="stylesheet" href="/publico/assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="/publico/assets/css/Cards.css">
+    <link rel="stylesheet" href="/publico/assets/css/Contact-FormModal-Contact-Form-with-Google-Map.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer-Dark-NavBar-With-Icon.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer-Dark-NavBar-With-Icon1.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer-Dark-NavBar-With-Icon2.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer-divider-text-middle.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer-Footer-Dark.css">
+    <link rel="stylesheet" href="/publico/assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="/publico/assets/css/ebs-contact-form-form.css">
+    <link rel="stylesheet" href="/publico/assets/css/ebs-contact-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <link rel="stylesheet" href="/publico/assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="/publico/assets/css/Menu-Modal-Element-styles.css">
+    <link rel="stylesheet" href="/publico/assets/css/Menu-Modal-Element.css">
+    <link rel="stylesheet" href="/publico/assets/css/untitled.css">
 </head>
 
 <body>
     <div id="header">
-        <header id="header-parallax" class="masthead" style="background: url(&quot;/publico/assets/img/banner%20parallax.svg&quot;) center / contain no-repeat, #282d32;height: 500px;width: auto;padding-top: 0;padding-bottom: 0;"></header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-dark" id="header" style="height: 50px;background: rgb(40,45,50);">
-            <div class="container">
-                <a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <header id="header-parallax" class="masthead" style="background: url(&quot;/publico/assets/img/banner%20parallax.svg&quot;) center / contain no-repeat, #282d32;height: 500px;width: auto;padding-top: 0;padding-bottom: 0;font-size: 20px;font-family: 'Oswald';color: rgb(33, 37, 41);"></header>
+        <nav class="navbar navbar-expand-lg fixed-top d-flex navbar-custom navbar-dark" id="header" style="height: 60px;background: rgb(40,45,50);width: auto;">
+            <div class="container"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" style="padding: 1px;box-shadow: 0px 0px;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon" style="padding: 10px;"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive" style="background: rgb(40,45,50);">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"></li>
-                        <li class="nav-item"><a class="nav-link" href="#horario" style="padding-left: 10px;color: white;">HORARIOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#recarga" style="padding-left: 10px;color: white;">recarga</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#footer" style="color: white;">SOBRE NOS</a></li>
+                    <ul class="navbar-nav ms-auto" style="text-align: center;">
+                        <li class="nav-item"><a class="nav-link" href="#verificarsaldo" style="padding: 10px;padding-left: 10px;color: white;">sALDO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#horario" style="padding: 10px;padding-left: 10px;color: white;">HORÁRIOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cartao" style="color: white;padding: 10px;">CARTÕES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer" style="color: white;padding: 10px;">SOBRE NOS</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="container" id="corpo-do-site" style="height: auto;">
-        <div>
-            <h1 style="text-align: center;font-family: Oswald, sans-serif;margin-top: 50px;margin-bottom: 200px;"><span style="font-weight: normal !important;">Bem vindo ao site do</span> LITORAL TRANSPORTE</h1>
+    <div class="container" id="corpo-do-site" style="height: auto;margin-bottom: 40px;">
+        <div class="carousel slide" data-bs-ride="false" id="carousel-1">
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img class="w-100 d-block" src="/publico/assets/img/bannercarroseu1.svg" alt="Slide Image" style="margin: 10px;"></div>
+                <div class="carousel-item"><img class="w-100 d-block" src="/publico/assets/img/bannercarroseu2.svg" alt="Slide Image" style="margin: 10px;"></div>
+                <div class="carousel-item"><img class="w-100 d-block" src="/publico/assets/img/a.svg" alt="Slide Image" style="margin: 10px;"></div>
+            </div>
+            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+            <div class="carousel-indicators"><button type="button" data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="2"></button></div>
         </div>
-        <div class="justify-content-xxl-center" id="horario">
-            <h1 class="text-center" style="margin-top: 50px;margin-bottom: 48px;font-family: Oswald, sans-serif;font-size: 50px;letter-spacing: 2px;">HORÁRIOS&nbsp;</h1>
-            <div><a class="btn d-xxl-flex flex-row justify-content-xxl-center align-items-xxl-center" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button" style="font-size: 50px;font-family: Oswald, sans-serif;font-weight: bold;border-color: black;margin-top: 10px;margin-bottom: 10px;">TABELA DE HORÁRIOS</a>
-                <div class="collapse show" id="collapse-3">
-                    <div class="text-center d-xxl-flex flex-column" id="linha-2" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;">LINHA 1 (TRAVESSÃO)</a>
-                        <div class="collapse" id="collapse-2" style="border: 1px solid black;">
-                            <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
-                            <div class="table-responsive">
+        <div id="saldo">
+            <h1 class="text-center" id="verificarsaldo" style="margin: 20px;font-size: 50px;letter-spacing: 2px;font-family: Oswald, sans-serif;font-weight: bold;font-style: italic;margin-bottom: 0px;">Verifique o seu SALDO!</h1>
+            <section class="position-relative py-4 py-xl-5" style="margin-bottom: 0px;padding-bottom: 0px !important;">
+                <div class="container position-relative">
+                    <div class="row gx-0 gy-0 row-cols-1 d-flex justify-content-center" style="color: rgb(33, 37, 41);border-color: rgb(0,1,1);border-top-color: rgb(33,;border-right-color: 37,;border-bottom-color: 41);border-left-color: 37,;">
+                        <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-12">
+                            <div class="card mb-5">
+                                <div class="card-body p-sm-5">
+                                    <h2 class="text-center mb-4" style="font-family: 'Oswald';">Verifique seu saldo aqui</h2>
+                                    <form id="login">
+                                        <div class="mb-3">
+                                            <label for="cpf">CPF</label>
+                                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="123.456.789-10" maxlength="14" style="border-radius: 6px;">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="senha">Senha</label>
+                                            <input class="form-control" type="password" id="senha" name="senha" placeholder="Digite sua senha" style="border-radius: 0px;">
+                                        </div>
+                                        <div class="text-center" style="margin: 10px;"><button id="botao" class="btn btn-primary" type="submit" >Entrar</button>
+                                        </form>
+                                            <div class="modal fade" role="dialog" tabindex="-1" id="modal1" style="width: 100%;">
+                                                <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header" style="height: 50px;width: 100%;">
+                                                            <h4 class="modal-title text-center">Sua carteirinha</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p id="nome">*nome do usuario*</p>
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Saldo</h4>
+                                                                    <h6 class="text-muted card-subtitle mb-2"></h6>
+                                                                    <p class="card-text" id="saldoAtual">*Saldo atual*</p>
+                                                                    <div><a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-8" href="#collapse-8" role="button" style="width: 70%;padding: 10px;height: auto;">Solicitar Recarga</a>
+                                                                        <div class="collapse" id="collapse-8">
+                                                                            <form id="recarga" style="text-align: left;">
+                                                                                <label class="form-label" style="width: 100%;text-align: left;">Valor</label>
+                                                                                <input id="valorRecarga" class="form-control" type="text" placeholder="R$">
+                                                                                <button class="btn btn-primary mt-1" type="submit">Solicitar</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"><button class="btn btn-primary" id="btn-modal" type="button" data-bs-toggle="modal" data-bs-target="#modal1">SAIR</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center d-xl-flex justify-content-xl-center mb-3"><a href="#cartao" style="margin-top: 10px;color: rgb(61, 245, 254);">Se não tiver seu Cartão ainda</a></div>
+                                        <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="justify-content-xxl-center" id="horario" style="margin-bottom: 0px;">
+            <h1 class="text-center" id="HORARIO" style="margin: 20px;font-family: Oswald, sans-serif;font-size: 50px;letter-spacing: 2px;font-style: italic;margin-bottom: 30px;margin-top: 0px;">HORÁRIOS</h1>
+            <div class="d-flex flex-column align-items-center"><a class="btn text-center d-xxl-flex flex-row justify-content-xxl-center align-items-xxl-center" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button" id="bt3" style="/*font-size: 50px;*/font-family: 'Oswald';border-color: black;margin-top: 10px;margin-bottom: 10px;width: 100%;font-weight: bold;color: rgb(0,0,0);background: #ffffff;">TABELA DE LINHA</a>
+                <div class="collapse show" id="collapse-3" style="width: 90%;">
+                    <div class="text-center d-xxl-flex flex-column" id="linha-2" style="margin-bottom: 10px;"><a class="btn text-center" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" id="bt3" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;width: 100%;background: #ffffff;border-radius: 0px;">LINHA 1 (TRAVESSÃO)</a>
+                        <div class="collapse" id="collapse-2" style="border-radius: 0px;border: 1px solid black ;border-top: 0px solid black ;">
+                            <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;width: 100%;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
+                            <div class="table-responsive" style="width: auto;height: auto;">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -131,13 +211,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p><br><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA&nbsp; CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro),<br>Avenida Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), Cemitério Indaiá, Avenida
-                                José Herculano (Centro<br>Esportivo Municipal, Serramar Shopping, Porto Novo), Barranco Alto, Residencial Nova Caraguá II, CIASE<br>Travessão.<br><br>SAÍDA&nbsp; BAIRRO: CIASE Travessão, Residencial Nova Caraguá II, Barranco
-                                Alto, Avenida José<br>Herculano (Mercadinho Piratininga, Porto Novo, Serramar Shopping, Centro Esportivo Municipal), Cemitério Indaiá,<br>Casa de Saúde Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro),
-                                Rua Caçapava, Fórum,<br>Terminal Sumaré<br><br><br></p><iframe allowfullscreen="" frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="400"></iframe></div>
+                            <p class="text-center" style="margin: 20px;margin-bottom: 20px;"><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA&nbsp; CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro),<br>Avenida Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), Cemitério Indaiá, Avenida José Herculano (Centro<br>Esportivo Municipal, Serramar Shopping, Porto Novo), Barranco Alto, Residencial Nova Caraguá II, CIASE<br>Travessão.<br><br>SAÍDA&nbsp; BAIRRO: CIASE Travessão, Residencial Nova Caraguá II, Barranco Alto, Avenida José<br>Herculano (Mercadinho Piratininga, Porto Novo, Serramar Shopping, Centro Esportivo Municipal), Cemitério Indaiá,<br>Casa de Saúde Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua Caçapava, Fórum,<br>Terminal Sumaré</p>
+                        </div>
                     </div>
-                    <div class="text-center d-xxl-flex flex-column" id="linha-1" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;">LINHA 2 (JARAGUA)</a>
-                        <div class="collapse" id="collapse-1" style="border: 1px solid black;">
+                    <div class="text-center d-xxl-flex flex-column" id="linha-1" style="margin-bottom: 10px;"><a class="btn text-center" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button" id="bt3" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;width: 100%;background: #ffffff;border-radius: 0px;">&nbsp; &nbsp;LINHA 2 (JARAGUA)</a>
+                        <div class="collapse" id="collapse-1" style="border: 1px solid black ;border-top-width: 0px;border-radius: 0px;">
                             <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
                             <div class="table-responsive">
                                 <table class="table">
@@ -227,14 +305,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p><br><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro), Avenida<br>Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), Cemitério Indaiá, Avenida José
-                                Herculano (Centro Esportivo<br>Municipal, Serramar Shopping, UBS Porto Novo), Praça Jorge de Castro (Travessão), Paróquia Nossa Senhora da<br>Glória, CIDE Sul, E. E. Vereador Benedito Paes Sobrinho, Condomínio Portal dos
-                                Pássaros, CIEFI Prof. Edna Maria<br>Nogueira Ferraz.<br><br>SAÍDA BAIRRO: CIASC Perequê-Mirim, Divisa Caraguá-São Sebastião, Avenida José Herculano<br>(SubPrefeitura, UBS Porto Novo, Serramar Shopping, Centro Esportivo
-                                Municipal), Cemitério Indaiá, AME, Terminal<br>Rodoviário, Casa de Saúde Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua<br>Caçapava, Fórum, Terminal Sumaré.<br><br></p><iframe allowfullscreen=""
-                                frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="400"></iframe></div>
+                            <p style="margin: 20px;margin-bottom: 20px;"><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro), Avenida<br>Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), Cemitério Indaiá, Avenida José Herculano (Centro Esportivo<br>Municipal, Serramar Shopping, UBS Porto Novo), Praça Jorge de Castro (Travessão), Paróquia Nossa Senhora da<br>Glória, CIDE Sul, E. E. Vereador Benedito Paes Sobrinho, Condomínio Portal dos Pássaros, CIEFI Prof. Edna Maria<br>Nogueira Ferraz.<br><br>SAÍDA BAIRRO: CIASC Perequê-Mirim, Divisa Caraguá-São Sebastião, Avenida José Herculano<br>(SubPrefeitura, UBS Porto Novo, Serramar Shopping, Centro Esportivo Municipal), Cemitério Indaiá, AME, Terminal<br>Rodoviário, Casa de Saúde Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua<br>Caçapava, Fórum, Terminal Sumaré.</p>
+                        </div>
                     </div>
-                    <div class="text-center d-xxl-flex flex-column" id="linha-3" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" href="#collapse-4" role="button" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;">LINHA 3 (VAPAPESCA)</a>
-                        <div class="collapse" id="collapse-4" style="border: 1px solid black;">
+                    <div class="text-center d-xxl-flex flex-column" id="linha-3" style="margin-bottom: 10px;"><a class="btn text-center d-xxl-flex justify-content-xxl-center" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-4" href="#collapse-4" role="button" id="bt3" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;width: 100%;background: #ffffff;border-radius: 0px;">LINHA 3 (VAPAPESCA)</a>
+                        <div class="collapse" id="collapse-4" style="margin: 0px;margin-bottom: 20px;border: 1px solid black;border-top-width: 0px;border-radius: 0px;">
                             <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
                             <div class="table-responsive">
                                 <table class="table">
@@ -324,14 +399,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p><br><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro), Avenida<br>Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), AME, Terminal Rodoviário, Cemitério
-                                Indaiá, Avenida José<br>Herculano (Centro Esportivo Municipal, Serramar Shopping, UBS Porto Novo, SubPrefeitura), Divisa Caraguá – São<br>Sebastião, CIASC Perequê-Mirim.<br><br>SAÍDA BAIRRO: CIEFI Prof. Edna Maria Nogueira
-                                Ferraz, Condomínio Portal dos Pássaros, E. E. Vereador<br>Benedito Paes Sobrinho, CIDE Sul, Paróquia Nossa Senhora da Glória, Praça Jorge de Castro (Travessão), Avenida<br>José Herculano (UBS Porto Novo, Serramar Shopping,
-                                Centro Esportivo Municipal), Cemitério Indaiá, Casa de Saúde<br>Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua Caçapava, Fórum, Terminal<br>Sumaré.<br><br></p><iframe allowfullscreen="" frameborder="0"
-                                src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="400"></iframe></div>
+                            <p style="margin: 20px;margin-bottom: 0px;"><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CENTRO: Terminal Sumaré, Fórum, Rua Fernando Costa, Avenida da Praia (Centro), Avenida<br>Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), AME, Terminal Rodoviário, Cemitério Indaiá, Avenida José<br>Herculano (Centro Esportivo Municipal, Serramar Shopping, UBS Porto Novo, SubPrefeitura), Divisa Caraguá – São<br>Sebastião, CIASC Perequê-Mirim.<br><br>SAÍDA BAIRRO: CIEFI Prof. Edna Maria Nogueira Ferraz, Condomínio Portal dos Pássaros, E. E. Vereador<br>Benedito Paes Sobrinho, CIDE Sul, Paróquia Nossa Senhora da Glória, Praça Jorge de Castro (Travessão), Avenida<br>José Herculano (UBS Porto Novo, Serramar Shopping, Centro Esportivo Municipal), Cemitério Indaiá, Casa de Saúde<br>Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua Caçapava, Fórum, Terminal<br>Sumaré.</p>
+                        </div>
                     </div>
-                    <div class="text-center d-xxl-flex flex-column" id="linha-4" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" href="#collapse-5" role="button" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;">LINHA 4(JARAGUAZINHO)</a>
-                        <div class="collapse" id="collapse-5" style="border: 1px solid black;">
+                    <div class="text-center d-xxl-flex flex-column" id="linha-4" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-5" href="#collapse-5" role="button" id="bt3" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;width: 100%;background: #ffffff;border-radius: 0px;">&nbsp; &nbsp; &nbsp; LINHA 4 (JARAGUAZINHO)</a>
+                        <div class="collapse" id="collapse-5" style="border: 1px solid black ;border-top-width: 0px;border-radius: 0px;">
                             <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
                             <div class="table-responsive">
                                 <table class="table">
@@ -401,12 +473,11 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p><br><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA HOSPITAL REGIONAL: Retorno Pontal Santa Marina, Serramar Shopping, CEMUG, Cemitério<br>Indaiá, AME, Terminal Rodoviária, Hipermercado Shibata, SESAU Jaraguazinho.<br><br>SAÍDA
-                                JARAGUAZINHO: SESAU Jaraguazinho, Hipermercado SHIBATA, Terminal Rodoviária, Cemitério<br>Municipal, PoupaTempo, Trevo do Poiares, CEMUG, Serramar Shopping, Hospital Regional.<br><br><br></p><iframe allowfullscreen="" frameborder="0"
-                                src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="400"></iframe></div>
+                            <p style="margin: 20px;margin-bottom: 20px;"><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA HOSPITAL REGIONAL: Retorno Pontal Santa Marina, Serramar Shopping, CEMUG, Cemitério<br>Indaiá, AME, Terminal Rodoviária, Hipermercado Shibata, SESAU Jaraguazinho.<br><br>SAÍDA JARAGUAZINHO: SESAU Jaraguazinho, Hipermercado SHIBATA, Terminal Rodoviária, Cemitério<br>Municipal, PoupaTempo, Trevo do Poiares, CEMUG, Serramar Shopping, Hospital Regional.</p>
+                        </div>
                     </div>
-                    <div class="text-center d-xxl-flex flex-column" id="linha-5" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-6" href="#collapse-6" role="button" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;">LINHA 5(RIO DO OURO)</a>
-                        <div class="collapse" id="collapse-6" style="border: 1px solid black;">
+                    <div class="text-center d-xxl-flex flex-column" id="linha-5" style="margin-bottom: 10px;"><a class="btn" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-6" href="#collapse-6" role="button" id="bt3" style="font-size: 25px;font-family: Oswald, sans-serif;border-width: 1px;border-color: black;width: 100%;background: #ffffff;border-radius: 0px;">&nbsp; &nbsp;LINHA 5 (RIO DO OURO)</a>
+                        <div class="collapse" id="collapse-6" style="border: 1px solid black ;border-top-width: 0px;border-radius: 0px;">
                             <h1 style="font-family: Oswald, sans-serif;font-size: 30px;padding-top: 10px;padding-bottom: 10px;"><span style="font-weight: normal !important;">Dias uteis</span></h1>
                             <div class="table-responsive">
                                 <table class="table">
@@ -481,63 +552,80 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p><br><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CANTA GALO: Bairro do Canta Galo, Praça Sensorial, Bairro Cidade Jardim, Fórum, Rua Fernando<br>Costa, Avenida da Praia (Centro), Avenida Prestes Maia, Casa de Saúde Stela
-                                Maris (Santa Casa), Terminal
-                                <br>Rodoviário, Hipermercado Shibata, SAU Nova Tamoios, Bairro Jaraguazinho, EMEI/EMEF Aída de Castro Grazioli,<br>UBS Rio do Ouro, EMEI/EMEF Benedito Ferreira Louzada, Horto Florestal.<br><br>SAÍDA RIO DO OURO: Horto Florestal,
-                                EMEI/EMEF Benedito Ferreira Louzada, UBS Rio do Ouro,<br>EMEI/EMEF Aída de Castro Grazioli, Bairro Jaraguazinho, SAU Nova Tamoios, Hipermercado Shibata, Terminal<br>Rodoviário, Casa de Saúde Stela Maris (Santa Casa), Avenida
-                                Prestes Maia, Avenida da Praia (Centro), Rua<br>Caçapava, Fórum, Terminal Sumaré, Laticínios Litoral Norte, Bairro Cidade Jardim, Praça Sensorial, Bairro Canta<br>Galo.<br><br><br></p><iframe allowfullscreen="" frameborder="0"
-                                src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="400"></iframe></div>
+                            <p style="margin: 20px;margin-bottom: 20px;"><strong>ITINERÁRIO</strong>&nbsp;<br><br>SAÍDA CANTA GALO: Bairro do Canta Galo, Praça Sensorial, Bairro Cidade Jardim, Fórum, Rua Fernando<br>Costa, Avenida da Praia (Centro), Avenida Prestes Maia, Casa de Saúde Stela Maris (Santa Casa), Terminal<br>Rodoviário, Hipermercado Shibata, SAU Nova Tamoios, Bairro Jaraguazinho, EMEI/EMEF Aída de Castro Grazioli,<br>UBS Rio do Ouro, EMEI/EMEF Benedito Ferreira Louzada, Horto Florestal.<br><br>SAÍDA RIO DO OURO: Horto Florestal, EMEI/EMEF Benedito Ferreira Louzada, UBS Rio do Ouro,<br>EMEI/EMEF Aída de Castro Grazioli, Bairro Jaraguazinho, SAU Nova Tamoios, Hipermercado Shibata, Terminal<br>Rodoviário, Casa de Saúde Stela Maris (Santa Casa), Avenida Prestes Maia, Avenida da Praia (Centro), Rua<br>Caçapava, Fórum, Terminal Sumaré, Laticínios Litoral Norte, Bairro Cidade Jardim, Praça Sensorial, Bairro Canta<br>Galo.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="recarga">
-            <h1 class="text-center" style="margin-top: 50px;margin-bottom: 0px;font-size: 50px;letter-spacing: 2px;font-family: Oswald, sans-serif;">RECARGA</h1>
-            <section class="position-relative py-4 py-xl-5">
-                <div class="container position-relative">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                            <div class="card mb-5">
-                                <div class="card-body p-sm-5">
-                                    <h2 class="text-center mb-4">Recarregue seu cartão aqui</h2>
-                                    <form id="form">
-                                        <div class="mb-3"><input class="form-control" type="text" id="cpf" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" maxlength="14" placeholder="123.456.789-10"></div>
-                                        <div class="mb-3"><input class="form-control" type="text" id="saldo" placeholder="Digite o Valor"></div>
-                                        <div><button class="btn d-block w-100" type="submit" style="border-color: black;">Enviar Solicitação</button></div>
-                                    </form>
-                                </div>
+        <div id="cartao">
+            <h1 class="text-center" id="CARTAO" style="margin: 20px;font-size: 50px;letter-spacing: 2px;font-family: Oswald, sans-serif;font-weight: bold;font-style: italic;margin-bottom: 30px;">CARTÕES</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="font-family: 'Oswald';font-size: 30px;">Vantagens do Cartão Litoral Transporte</h4>
+                    <ul style="font-size: 20px;">
+                        <li style="font-family: 'Oswald';font-size: 20px;">Facilidade de uso e recarga</li>
+                        <li style="font-size: 20px;font-family: 'Oswald';">Agilidade ao embarcar</li>
+                        <li style="font-size: 20px;font-family: 'Oswald';">Maior segurança</li>
+                        <li style="font-size: 20px;font-family: 'Oswald';">Mais economico</li>
+                    </ul>
+                    <h4 class="card-title" style="font-family: 'Oswald';font-size: 30px;">Tipos de Cartão</h4>
+                    <p class="card-text" style="font-size: 20px;font-family: 'Oswald';">Comum<br>PCD<br>Idoso<br>Estudante</p>
+                    <h4 class="card-title" id="solicitar" style="font-family: 'Oswald';font-size: 30px;">Como Solicitar e Retirar o Cartão Litoral Transporte?</h4>
+                    <p class="card-text" style="font-size: 20px;font-family: 'Oswald';">Para solicitar o Cartão da Litoral Transporte basta apenas ir em um dos nossos postos de atendimento e se cadastrar</p>
+                    <div><a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-7" href="#collapse-7" role="button" id="BTN-tarifa" style="width: 100%;text-align: left;">Histórico de Tarifa</a>
+                        <div class="collapse" id="collapse-7">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 50%;">DATA</th>
+                                            <th style="width: 50%;">TARIFA PUBLICA</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DD/MM/AAAA</td>
+                                            <td>Cartão - $00,00 / Dinheiro - $00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DD/MM/AAAA</td>
+                                            <td>Cartão - $00,00 / Dinheiro - $00,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                            <p></p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
-    <div id="footer" class="footer-dark" style="padding-bottom: 20px;">
+    <div id="footer" class="footer-dark" style="padding-bottom: 20px;width: 100%;height: 100%;">
         <div style="text-align:center;">
             <h2 class="divider-style" style="margin-top:0px;"><span style="background-color:rgb(40, 45, 50);"><a href="#"><img src="/publico/assets/img/LitoralTransporteLogo.svg" width="84" height="55" style="border-width: 1px;border-color: rgb(49,246,255);"></a></span></h2>
         </div>
         <footer>
             <div class="container">
-                <div class="row" style="margin-top:20px;">
-                    <div class="col-md-6 item text" style="margin-bottom: 0px;border: 1px solid rgb(0,0,0) ;">
-                        <h3 style="font-family: 'Bebas Neue', sans-serif;font-size: 20px;letter-spacing: 2px;">Litoral Transporte</h3>
+                <div class="row">
+                    <div class="col-md-6 col-xl-11 item text" style="margin-bottom: 0px;border: 0px solid rgb(0,0,0) ;border-bottom-width: 0px;">
+                        <h3 style="font-family: 'Bebas Neue', sans-serif;font-size: 20px;letter-spacing: 2px;margin-top: 12px;">Litoral Transporte</h3>
                         <p style="margin-bottom: 5px;">A litoral Transporte é uma empresa de ônibus estabelecida na cidade de Caraguatatuba. Nossa missão é proporcionar viagens confiáveis e confortáveis para os residentes e visitantes dessa bela região litorânea&nbsp;</p>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-xl-6 item" style="padding-bottom: 9px;border: 1px solid black ;">
-                        <h3>Sobre nós</h3>
+                    <div class="col-sm-6 col-md-3 col-xl-3 item" style="padding-bottom: 9px;width: auto;height: auto;border: 0px solid black ;">
+                        <h3 style="margin-top: 12px;">Sobre nós</h3>
                         <ul class="justify-content-xl-start align-items-xl-end">
-                            <li class="text-start d-flex"><i class="material-icons">location_on</i><a href="#">&nbsp; Rua José Herculano 1086&nbsp; &nbsp;Caraguatatuba</a></li>
+                            <li class="text-start d-flex"><i class="material-icons">location_on</i><a href="#">&nbsp; rua José Herculano 1086&nbsp; &nbsp;Caraguatatuba</a></li>
                             <li class="d-flex"><i class="material-icons" style="font-size: 27px;">mail_outline</i><a href="#">&nbsp; suporte@LitoralTransporte.com.br</a></li>
                             <li class="d-flex"><i class="material-icons">phone</i><a href="#">&nbsp; +12 02101-2007</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col item social" style="margin-top: 10px;border: 1px solid black ;"><input class="form-control-lg" type="email" style="width:200px;height:40px;margin-left:-3px;margin-bottom:11px;margin-top:30px;" value="Nome@Gmail.com"><button class="btn btn-primary" style="width: 111px;height: 40px;margin-top: -8px;background: rgb(61,245,254);--bs-primary: #341d29;--bs-primary-rgb: 52,29,41;color: black;border-style: none;"
-                        type="button">Inscreva-se</button>
-                    <h1 style="font-size:1rem;">Noticias Semanais</h1>
+                <div class="col item social" style="margin-top: 10px;color: rgb(247,163,236);border: 0px solid rgb(247,163,236) ;border-top-width: 1px;border-top-color: black;">
+                    <h1 style="font-size: 1rem;color: rgb(61,245,254);--bs-primary: blue;--bs-primary-rgb: 0,0,255;margin: 20px;">Nossas Redes Sociais</h1>
                 </div>
-                <div class="col item social" style="margin-top: 15px;padding-top: 7px;padding-bottom: 8px;border: 1px solid black ;"><a class="text-center" href="#"><i class="icon ion-social-facebook"></i></a><a class="text-center" href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a></div>
+                <div class="col item social" style="margin-top: 15px;padding-top: 7px;padding-bottom: 8px;border: 0px solid rgb(247,163,236) ;"><a class="text-center" href="#"><i class="icon ion-social-facebook"></i></a><a class="text-center" href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a></div>
                 <div style="text-align:center;margin-top:-40px;">
                     <h2 class="divider-style"></h2>
                 </div>
@@ -546,11 +634,13 @@
         </footer>
     </div>
     <script src="/publico/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/publico/assets/js/script.min.js"></script>
+    <script src="/publico/assets/js/Contact-FormModal-Contact-Form-with-Google-Map-modal_contact.js"></script>
+    <script src="/publico/assets/js/Menu-Modal-Element-_app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/publico/js/recarga.js"></script>
     <script src="/admin/js/formatarCPF.js"></script>
-    <script src="/admin/js/formatarSaldo.js"></script>
+    <script src="/publico/js/formatarSaldo.js"></script>
+    <script src="/publico/js/login.js"></script>
+    <script src="/publico/js/recarga.js"></script>
 </body>
 
 </html>

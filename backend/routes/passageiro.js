@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const auth = require("../middlewares/authorization.js");
+const bcrypt = require('bcrypt');
 const { PrismaClient, Prisma } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -47,8 +48,8 @@ router.get("/buscar/:id", async function (req, res, next) {
 
 router.post("/cadastrar", auth, async (req, res, next) => {
     try {
-        const { nome, cpf, saldo, tipo, codigocartao } = req.body;
-
+        const { nome, cpf, saldo, tipo, senha, codigocartao } = req.body;
+        const senhaCrypt = await bcrypt.hash(senha, 10)
         const saldoFormatado = saldo.split(".").join("").split(",").join(".")
         const novoPassageiro = await prisma.cliente.create({
             data: {
@@ -57,7 +58,8 @@ router.post("/cadastrar", auth, async (req, res, next) => {
                 saldo: saldoFormatado,
                 codigocartao,
                 tipo,
-                usuario_id: req.usuario.id
+                usuario_id: req.usuario.id,
+                senha: senhaCrypt
             },
         });
 
@@ -71,7 +73,8 @@ router.post("/cadastrar", auth, async (req, res, next) => {
 router.put('/editar/:id', async function (req, res, next) {
     try {
         const id = parseInt(req.params.id);
-        const { nome, cpf, saldo, tipo, codigocartao } = req.body;
+        const { nome, cpf, saldo, tipo, senha, codigocartao } = req.body;
+        const senhaCrypt = await bcrypt.hash(senha, 10)
         const saldoFormatado = saldo.split(".").join("").split(",").join(".")
         const passageiroAtualizado = await prisma.cliente.update({
             where: {
@@ -82,7 +85,8 @@ router.put('/editar/:id', async function (req, res, next) {
                 saldo: saldoFormatado,
                 cpf,
                 tipo,
-                codigocartao
+                codigocartao,
+                senha: senhaCrypt
             },
         });
 
@@ -113,6 +117,27 @@ router.delete("/excluir/:id", async function (req, res, next) {
     }
 });
 
+router.put('/login', async function (req, res, next) {
+    try {
+        const { cpf, senha } = req.body;
+        const passageiro = await prisma.cliente.findFirst({
+            where: {
+                cpf: cpf,
+            }
+        })
+        console.log(senha);
+        if (!passageiro) {
+            return res.status(401).json({ success: false, msg: 'Credenciais inválidasa.' })
+        }
+        const validaSenha = await bcrypt.compare(senha, passageiro.senha)
+        if (!validaSenha) {
+            return res.status(401).json({ success: false, msg: 'Credenciais inválidas.' })
+        }
+        res.json(passageiro)
+    } catch (error) {
+        console.error(error);
+    }
+})
 // --- Recarga
 router.put('/recarga', async function (req, res, next) {
     try {

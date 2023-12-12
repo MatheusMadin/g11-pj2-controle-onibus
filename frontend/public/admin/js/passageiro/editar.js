@@ -25,9 +25,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
       const cpf = document.querySelector("#cpf").value;
       const saldo = document.querySelector("#saldo").value;
       const tipo = document.querySelector("#tipo").value;
+      const senha = document.querySelector("#senha").value;
       const codigocartao = document.querySelector("#codigoCartao").value;
 
-      const data = { nome, saldo, cpf, tipo, codigocartao };
+      const data = { nome, saldo, cpf, tipo, senha, codigocartao };
 
       try {
         const response = await axios.put(`http://localhost:3000/api/passageiro/editar/${urlId}`, data);
