@@ -11,11 +11,11 @@ Este é um projeto que contem um script de catraca ônibus, um sistema administr
               Se o cartão é do tipo "ESTUDANTE", o valor do passe não será cobrado, porem só será possivel realizar duas passegens por dia.<br>
               Se o cartão é do tipo "COMUM", o valor do passe será cobrado.<br>
 
- Página Online: Uma página pública da empresa onde quem possui a carteirinha da empresa, pode consultar o saldo da carteirinha e recarregá-la online, o site tambem contem, informações sobre linhas, horários, etc...<br>
+ <h3>Página Online: Uma página pública da empresa onde quem possui a carteirinha da empresa, pode consultar o saldo da carteirinha e recarregá-la online, o site tambem contem, informações sobre linhas, horários, etc...</h3><br>
 
  ![imagem_2023-12-12_090610052](https://github.com/MatheusMadin/g11-pj2-controle-onibus/assets/141776167/5f0c818c-c343-487e-8611-d1a1d21d8759)
 
- Menu Administrativo: Uma página privada onde os usuários autorizados podem cadastrar e editar motoristas, linhas e passageiros.<br>
+ <h3>Menu Administrativo: Uma página privada onde os usuários autorizados podem cadastrar e editar motoristas, linhas e passageiros.</h3><br>
 
  ![imagem_2023-12-12_091007907](https://github.com/MatheusMadin/g11-pj2-controle-onibus/assets/141776167/f7e839f1-59f6-4e80-aa6f-98f837a80e7a)
 
