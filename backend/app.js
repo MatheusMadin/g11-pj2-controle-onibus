@@ -10,6 +10,7 @@ const passageiroRouter = require('./routes/passageiro');
 const motoristaRouter = require('./routes/motorista');
 const usuarioRouter = require('./routes/usuario')
 const catracaRouter = require('./routes/catraca');
+const tarifaRouter = require('./routes/tarifa');
 
 const app = express();
 app.use(cors())
@@ -31,5 +32,6 @@ app.use('/api/passageiro', passageiroRouter);
 app.use('/api/motorista', motoristaRouter);
 app.use('/api/catraca', catracaRouter);
 app.use('/api/usuario', usuarioRouter);
+app.use('/api/tarifa', tarifaRouter);
 
 module.exports = app;

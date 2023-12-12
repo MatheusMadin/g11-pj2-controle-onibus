@@ -12,6 +12,9 @@ router.get("/login", function (req, res, next) {
 router.get("/register", function (req, res, next) {
   res.render("admin/register");
 });
+router.get("/tarifa", function (req, res, next) {
+  res.render("admin/tarifa");
+});
 
 //---COMEÇO DE LINHAS---
 router.get("/linha", function (req, res, next) {

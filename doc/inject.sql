@@ -13,6 +13,8 @@ VALUES ("Calebe Sérgio Eduardo Souza","calebe.sergio.souza@way2goidiomas.com.br
 
 
 -- Cliente --
+INSERT INTO cliente (id, nome, saldo, usuario_id, codigocartao)
+VALUES (0, "Dinheiro", 0, 1, 0);
 INSERT INTO cliente (nome, saldo, cpf, usuario_id, codigocartao, tipo, senha)
 VALUES ("Clemerson dos Santos", 25.00, "111.111.111-11", 1, "0009372771", "Comum", "$2b$10$l7iFtRlUtuXmw4Z83Oxn5uuamhBLxiyO.ovCV6rKK6tY9q9HsN7PW");
 INSERT INTO cliente (nome, saldo, cpf, usuario_id, codigocartao, tipo, senha)

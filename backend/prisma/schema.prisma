@@ -83,3 +83,10 @@ model viagem {
   @@index([motorista_id], map: "fk_viagem_motorista1_idx")
   @@index([onibus_id], map: "fk_viagem_onibus1_idx")
 }
+
+model tarifa {
+  id       Int      @id @default(autoincrement())
+  data     String?  @db.VarChar(45)
+  dinheiro Decimal? @db.Decimal(8, 2)
+  cartao   Decimal? @db.Decimal(8, 2)
+}
